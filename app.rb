@@ -42,7 +42,7 @@ set :default_locale, 'ja'
 set :twitter_oauth_config,
       :key => 'Kx1N5EQ9nQ7SQlu9i7EYA',
       :secret => 'EgNg5Rh5EyaCqNILYVTrdYDDnSWhxr8Z51d8eal70GI',
-      :callback => 'http://localhost:9393/auth',
+      :callback => (ENV['TWITTER_OAUTH_CALLBACK_URL'] || 'http://localhost:9393/auth'),
       :login_template => {:text => '<a href="/connect">Login using Twitter</a>'}
 use Rack::Exceptional, ENV['EXCEPTIONAL_API_KEY'] || 'key' if ENV['RACK_ENV'] == 'production'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{File.expand_path(File.dirname(__FILE__))}/development.sqlite3")
