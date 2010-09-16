@@ -77,7 +77,7 @@ post '/profile' do
   @profile.icon_url = user.info['profile_image_url']
   @profile.homepage_url = user.info['url']
   if @profile.save
-    if settings.environment == 'production'
+    if ENV['RACK_ENV'] == 'production'
       redirect "http://#{user.info['screen_name']}.makesthis.com/"
     else
       redirect "http://#{user.info['screen_name']}.localhost:9393/"
