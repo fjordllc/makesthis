@@ -50,7 +50,7 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{File.expand_path(
 before do
   subdomain = request.host.split('.').first
   puts "subdomain: #{subdomain}"
-  unless %w(localhost makesthis).include?(subdomain)
+  unless %w(localhost makesthis-com makesthis).include?(subdomain)
     params[:twitter_name] = subdomain
   end
 end
