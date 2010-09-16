@@ -15,3 +15,7 @@ gem 'dm-validations'
 gem 'dm-types'
 gem 'dm-sqlite-adapter'
 gem 'shoulda'
+
+group :production do
+  gem 'dm-postgres-adapter'
+end
