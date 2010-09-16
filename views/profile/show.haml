@@ -1,0 +1,28 @@
+#person
+  %p.portrait
+    %img{:src => @profile.photo_url}
+  %h1.name= @profile.name
+  %p.summary= @profile.description
+#questions
+  .question
+    %h2.title= t.who_are_you
+    = @profile.who_are_you_ja
+  .question
+    %h2.title= t.what_did_you_make
+    = @profile.what_did_you_make_ja
+  .question
+    %h2.title= t.why_did_you_make
+    = @profile.why_did_you_make_ja
+  .question
+    %h2.title= t.what_do_you_make_next
+    = @profile.what_do_you_make_next_ja
+  .footer
+    %h2
+      %img{:src => @profile.icon_url}
+    %ul
+      %li.twitter
+        %a{:href => "http://twitter.com/#{@profile.twitter}"}
+      %li.website
+        %a{:href => @profile.homepage_url}
+      %li.makethis
+        %a{:href => '/'}= ''

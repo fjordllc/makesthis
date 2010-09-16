@@ -1,0 +1,31 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=utf-8'}
+    %meta{'http-equiv' => 'Content-Style-Type', 'content' => 'text/css'}
+    %meta{'http-equiv' => 'Content-Script-Type', 'content' => 'text/javascript'}
+    %meta{:name => 'description', :content => '作ってる人向けプロフィールサービス'}
+    %meta{:name => 'keywords', :content => 'MAKE,プロフィール,イベント,自己紹介'}
+    %title MAKES THIS
+    %link{:href => '/style.css', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:rel => 'shortcut icon', :href => '/favicon.ico'}
+  %body
+    = yield
+    #footer
+      %ul.nav
+        %li
+          %a{:href => 'http://fjord.jp/'} 更新情報
+        %li
+          %a{:href => '/api'} API
+      %address 
+        &copy; <a href="http://fjord.jp">FJORD, LLC</a>
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2927688-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
