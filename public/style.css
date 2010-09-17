@@ -39,7 +39,6 @@ blockquote {
   display: block;  /* ブロックレベル要素に */
 }
 
-
 body{
 	width:640px;
 	margin-right: auto;
@@ -54,10 +53,15 @@ h1.logo a {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
-	background-image: url(/images/h1_logo_a.png);
+	background-image: url(images/h1_logo_a.png);
 	background-repeat: no-repeat;
 	text-decoration: none;
 	margin-bottom: 30px;
+}
+* html h1 {
+	left: auto;
+	right: auto;
+	display: block;
 }
 h1.logo a:link,
 h1.logo a:visited {
@@ -153,6 +157,12 @@ h2.description {
 	display: block;
 	margin-bottom: 25px;
 	}
+#person .portrait img {
+	min-width: 100px;
+	max-width: 640px;
+	margin: 10px auto;
+	width:expression(document.body.clientWidth < 642? "640px" : document.body.clientWidth > 62? "60px" : "auto");
+	}
 #person .name {
 	text-align: right;
 	display: block;
@@ -173,7 +183,7 @@ h2.description {
 	margin-bottom: 20px;
 	font-size: 30px;
 	color: #4e8db9;
-	background-image: url(/images/questions_title.gif);
+	background-image: url(images/questions_title.gif);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	padding-bottom: 4px;
@@ -210,7 +220,7 @@ h2.description {
 	padding-top: 8px;
 	list-style-type: none;
 }
-#questions .footerul li {
+#questions .footer ul li {
 	display: inline;
 	margin-right: 15px;
 	margin-left: 15px;
@@ -232,13 +242,13 @@ h2.description {
 	background-position: left bottom;
 }
 #questions .footer ul li.website a {
-	background-image: url(/images/footer_li_website.gif);
+	background-image: url(images/footer_li_website.gif);
 }
 #questions .footer ul li.twitter a {
-	background-image: url(/images/footer_li_twitter.gif);
+	background-image: url(images/footer_li_twitter.gif);
 }
 #questions .footer ul li.facebook a {
-	background-image: url(/images/footer_li_facebook.gif);
+	background-image: url(images/footer_li_facebook.gif);
 }
 #questions .footer ul li a:link,
 #questions .footer ul li a:visited {
@@ -251,7 +261,7 @@ h2.description {
 	text-decoration: underline;
 }
 #questions .footer ul li.makes_this a {
-	background-image: url(/images/footer_make_this.gif);
+	background-image: url(images/footer_make_this.gif);
 	height: 35px;
 	width: 76px;
 	float: right;
@@ -273,7 +283,7 @@ h2.description {
 	margin-bottom: 20px;
 	font-size: 30px;
 	color: #4e8db9;
-	background-image: url(/images/questions_title.gif);
+	background-image: url(images/questions_title.gif);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	padding-bottom: 4px;
@@ -285,7 +295,7 @@ h2.description {
 	font-weight: bold;
 	letter-spacing: 0.1em;
 	margin-bottom: 40px;
-	background-image: url(/images/content_h1.png);
+	background-image: url(images/content_h1.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 	text-decoration: none;
@@ -341,28 +351,28 @@ h2.description {
 	}
 
 
-#profile_form .title {
+#new_person .title {
 	display: block;
 	margin-bottom: 20px;
 	font-size: 30px;
 	color: #4e8db9;
-	background-image: url(/images/questions_title.gif);
+	background-image: url(images/questions_title.gif);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	padding-bottom: 4px;
 	}
-#profile_form label {
+#new_person label {
 	display: block;
 	margin-bottom: 15px;
 	font-size: 20px;
 	color: #4e8db9;
 	}
-#profile_form textarea {
+#new_person textarea {
 	width: 100%;
 	height: 400px;
 	color: #1a537c;
 }
-#profile_form input.text {
+#new_person input.text {
 	width: 100%;
 	font-size: 20px;
 	font-weight: bold;
@@ -370,7 +380,7 @@ h2.description {
 }
 
 /* input parts */
-#profile_form input.text,
+#new_person input.text,
 textarea,
 select {
 	border-top: 1px solid #c6c6c6;
@@ -383,13 +393,13 @@ select {
 	background-color: #eee;
 }
 
-#profile_form input.text:hove,
+#new_person input.text:hove,
 textarea:hover,
 select:hover {
 	background: #f3f3f3;
 }
 
-#profile_form input.text:focus,
+#new_person input.text:focus,
 textarea:focus,
 select:focus {
 	background: #fafafa;
@@ -397,10 +407,10 @@ select:focus {
 
 
 
-#profile_form .section {
+#new_person .section {
 	margin-bottom: 40px;
 	}
-#profile_form p.button {
+#new_person p.button {
 	margin-bottom: 40px;
 	text-align: center;
 	display: block;
@@ -429,6 +439,11 @@ select:focus {
 	}
 .errorExplanation ul {
 	padding-top: 20px;
+	}
+* html .errorExplanation ul {
+	padding-top: 20px;
+	padding-left: 20px;
+	list-style-type: none;
 	}
 .errorExplanation li {
 	display: block;
