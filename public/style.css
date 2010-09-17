@@ -39,6 +39,7 @@ blockquote {
   display: block;  /* ブロックレベル要素に */
 }
 
+
 body{
 	width:640px;
 	margin-right: auto;
@@ -46,22 +47,22 @@ body{
 	padding-top: 30px;
 	padding-bottom: 20px;
 }
-
+* html h1 {
+	left: auto;
+	right: auto;
+	display: block;
+	text-align: center;
+}
 h1.logo a {
 	width:424px;
 	height:225px;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
-	background-image: url(images/h1_logo_a.png);
+	background-image: url(/images/h1_logo_a.png);
 	background-repeat: no-repeat;
 	text-decoration: none;
 	margin-bottom: 30px;
-}
-* html h1 {
-	left: auto;
-	right: auto;
-	display: block;
 }
 h1.logo a:link,
 h1.logo a:visited {
@@ -120,13 +121,19 @@ h2.description {
 #footer {
 	font-size: 93%;
 	clear: both;
+	width: 640px;
+	margin-right: auto;
+	margin-left: auto;
+}
+* html #footer {
+	clear: none;
+	width: 100%;
+	margin-right: 0px;
+	margin-left: 0px;
 }
 #footer ul.nav {
 	font-size: 93%;
 	display: block;
-	width: 400px;
-	margin-right: auto;
-	margin-left: auto;
 	text-align: center;
 }
 #footer ul.nav li {
@@ -157,12 +164,6 @@ h2.description {
 	display: block;
 	margin-bottom: 25px;
 	}
-#person .portrait img {
-	min-width: 100px;
-	max-width: 640px;
-	margin: 10px auto;
-	width:expression(document.body.clientWidth < 642? "640px" : document.body.clientWidth > 62? "60px" : "auto");
-	}
 #person .name {
 	text-align: right;
 	display: block;
@@ -183,7 +184,7 @@ h2.description {
 	margin-bottom: 20px;
 	font-size: 30px;
 	color: #4e8db9;
-	background-image: url(images/questions_title.gif);
+	background-image: url(/images/questions_title.gif);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	padding-bottom: 4px;
@@ -220,7 +221,7 @@ h2.description {
 	padding-top: 8px;
 	list-style-type: none;
 }
-#questions .footer ul li {
+#questions .footerul li {
 	display: inline;
 	margin-right: 15px;
 	margin-left: 15px;
@@ -242,13 +243,13 @@ h2.description {
 	background-position: left bottom;
 }
 #questions .footer ul li.website a {
-	background-image: url(images/footer_li_website.gif);
+	background-image: url(/images/footer_li_website.gif);
 }
 #questions .footer ul li.twitter a {
-	background-image: url(images/footer_li_twitter.gif);
+	background-image: url(/images/footer_li_twitter.gif);
 }
 #questions .footer ul li.facebook a {
-	background-image: url(images/footer_li_facebook.gif);
+	background-image: url(/images/footer_li_facebook.gif);
 }
 #questions .footer ul li a:link,
 #questions .footer ul li a:visited {
@@ -261,7 +262,7 @@ h2.description {
 	text-decoration: underline;
 }
 #questions .footer ul li.makes_this a {
-	background-image: url(images/footer_make_this.gif);
+	background-image: url(/images/footer_make_this.gif);
 	height: 35px;
 	width: 76px;
 	float: right;
@@ -283,7 +284,7 @@ h2.description {
 	margin-bottom: 20px;
 	font-size: 30px;
 	color: #4e8db9;
-	background-image: url(images/questions_title.gif);
+	background-image: url(/images/questions_title.gif);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	padding-bottom: 4px;
@@ -295,7 +296,7 @@ h2.description {
 	font-weight: bold;
 	letter-spacing: 0.1em;
 	margin-bottom: 40px;
-	background-image: url(images/content_h1.png);
+	background-image: url(/images/content_h1.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 	text-decoration: none;
@@ -351,28 +352,28 @@ h2.description {
 	}
 
 
-#new_person .title {
+#profile_form .title {
 	display: block;
 	margin-bottom: 20px;
 	font-size: 30px;
 	color: #4e8db9;
-	background-image: url(images/questions_title.gif);
+	background-image: url(/images/questions_title.gif);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	padding-bottom: 4px;
 	}
-#new_person label {
+#profile_form label {
 	display: block;
 	margin-bottom: 15px;
 	font-size: 20px;
 	color: #4e8db9;
 	}
-#new_person textarea {
+#profile_form textarea {
 	width: 100%;
 	height: 400px;
 	color: #1a537c;
 }
-#new_person input.text {
+#profile_form input.text {
 	width: 100%;
 	font-size: 20px;
 	font-weight: bold;
@@ -380,7 +381,7 @@ h2.description {
 }
 
 /* input parts */
-#new_person input.text,
+#profile_form input.text,
 textarea,
 select {
 	border-top: 1px solid #c6c6c6;
@@ -393,13 +394,13 @@ select {
 	background-color: #eee;
 }
 
-#new_person input.text:hove,
+#profile_form input.text:hove,
 textarea:hover,
 select:hover {
 	background: #f3f3f3;
 }
 
-#new_person input.text:focus,
+#profile_form input.text:focus,
 textarea:focus,
 select:focus {
 	background: #fafafa;
@@ -407,10 +408,10 @@ select:focus {
 
 
 
-#new_person .section {
+#profile_form .section {
 	margin-bottom: 40px;
 	}
-#new_person p.button {
+#profile_form p.button {
 	margin-bottom: 40px;
 	text-align: center;
 	display: block;
