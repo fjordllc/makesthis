@@ -6,6 +6,7 @@
   %p ああああああああああああああああああああああああああ
   %p ああああああああああああああああああああああああああ
 %form{:action => '/profile', :method => 'post', :id => 'profile_form'}
+  %h2.title= t.register_or_edit
   - unless @profile.errors.empty?
     #errorExplanation.errorExplanation
       %h2= t.error
@@ -22,16 +23,16 @@
     %label{:for => 'profile_description'}= t.profile.description
     %input{:type => 'text', :class => 'text', :id => 'profile_description', :name => 'profile[description]', :value => @profile.description}
   .section
-    %label{:for => 'profile_who_are_you_ja'}= t.profile.who_are_you_ja
-    %textarea{:id => 'profile_who_are_you_ja', :name => 'profile[who_are_you_ja]', :rows => 10, :cols => 50}= @profile.who_are_you_ja
+    %label{:for => 'profile_who_are_you'}= t.profile.who_are_you
+    %textarea{:id => 'profile_who_are_you', :name => 'profile[who_are_you]', :rows => 10, :cols => 50}= @profile.who_are_you
   .section
-    %label{:for => 'profile_what_did_you_make_ja'}= t.profile.what_did_you_make_ja
-    %textarea{:id => 'profile_what_did_you_make_ja', :name => 'profile[what_did_you_make_ja]', :rows => 10, :cols => 50}= @profile.what_did_you_make_ja
+    %label{:for => 'profile_what_did_you_make'}= t.profile.what_did_you_make
+    %textarea{:id => 'profile_what_did_you_make', :name => 'profile[what_did_you_make]', :rows => 10, :cols => 50}= @profile.what_did_you_make
   .section
-    %label{:for => 'profile_why_did_you_make_ja'}= t.profile.why_did_you_make_ja
-    %textarea{:id => 'profile_why_did_you_make_ja', :name => 'profile[why_did_you_make_ja]', :rows => 10, :cols => 50}= @profile.why_did_you_make_ja
+    %label{:for => 'profile_why_did_you_make'}= t.profile.why_did_you_make
+    %textarea{:id => 'profile_why_did_you_make', :name => 'profile[why_did_you_make]', :rows => 10, :cols => 50}= @profile.why_did_you_make
   .section
-    %label{:for => 'profile_what_do_you_make_next_ja'}= t.profile.what_do_you_make_next_ja
-    %textarea{:id => 'profile_what_do_you_make_next_ja', :name => 'profile[what_do_you_make_next_ja]', :rows => 10, :cols => 50}= @profile.what_do_you_make_next_ja
-  .section
-    %input{:type => 'submit', :value => t.submit}
+    %label{:for => 'profile_what_do_you_make_next'}= t.profile.what_do_you_make_next
+    %textarea{:id => 'profile_what_do_you_make_next', :name => 'profile[what_do_you_make_next]', :rows => 10, :cols => 50}= @profile.what_do_you_make_next
+  %p.button
+    %input{:type => 'submit', :value => t.register_or_edit}

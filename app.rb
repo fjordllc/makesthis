@@ -19,13 +19,9 @@ class Profile
   property :name, String
   property :description, String
   property :who_are_you, Text
-  property :who_are_you_ja, Text
   property :what_did_you_make, Text
-  property :what_did_you_make_ja, Text
   property :why_did_you_make, Text
-  property :why_did_you_make_ja, Text
   property :what_do_you_make_next, Text
-  property :what_do_you_make_next_ja, Text
   property :photo_url, Text, :format => :url
   property :icon_url, Text, :format => :url
   property :homepage_url, Text, :format => :url
@@ -62,6 +58,10 @@ get '/' do
     @profile = Profile.first(:twitter => params[:twitter_name])
     haml :'profile/show'
   end
+end
+
+get '/api' do
+  haml :api
 end
 
 get '/profile/edit' do

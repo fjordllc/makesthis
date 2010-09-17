@@ -2,16 +2,18 @@ what_make_you: 何作ってる人？
 submit: 登録
 register: 登録
 register_by_twitter: Twitterで登録
+register_or_edit: 登録・更新
 profile_service_for_maker: 作る人のプロフィールサービス
 who_are_you: あなたは誰ですか？
 what_did_you_make: 何を作りましたか？
 why_did_you_make: 何故それを作りましたか？
 what_do_you_make_next: 次に何を作りますか？
+api: API
 profile:
   photo_url: 写真URL
   name: 名前
   description: 所属・肩書き・職業
-  who_are_you_ja: あなたは誰ですか？
-  what_did_you_make_ja: 何を作りましたか？
-  why_did_you_make_ja: 何故作りましたか？
-  what_do_you_make_next_ja: 次に何を作りますか？
+  who_are_you: あなたは誰ですか？
+  what_did_you_make: 何を作りましたか？
+  why_did_you_make: 何故作りましたか？
+  what_do_you_make_next: 次に何を作りますか？
