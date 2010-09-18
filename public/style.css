@@ -14,6 +14,16 @@ version: 2.8.1
 */
 body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
+a:link,
+a:visited {
+	color:#03F
+	}
+
+a:hover.
+a:active {
+	color:#F36
+}
+
 
  /* --clearfix-- */  
 .clearfix:after,
@@ -116,7 +126,35 @@ h2.description {
 	font-size: 48px;
 	font-weight: bold;
 	letter-spacing: 0.1em;
-	margin-bottom: 220px;
+	margin-bottom: 40px;
+	}
+p.about {
+	display: block;
+	margin-bottom: 180px;
+	}
+p.about a {
+	display: block;
+	background-color: #4e8db9;
+	margin-right: 240px;
+	margin-left: 240px;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 30px;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	text-align: center;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+
+	}
+p.about a:link,
+p.about a:visited {
+	background-color: #4e8db9;
+	}
+p.about a:hover,
+p.about a:active {
+	background-color: #306c97;
 	}
 #footer {
 	font-size: 93%;
@@ -261,7 +299,7 @@ h2.description {
 	color: #ff2696;
 	text-decoration: underline;
 }
-#questions .footer ul li.makes_this a {
+#questions .footer ul li.makesthis a {
 	background-image: url(/images/footer_make_this.gif);
 	height: 35px;
 	width: 76px;
@@ -269,12 +307,12 @@ h2.description {
 	margin-right: 0px;
 	margin-top: -2px;
 }
-#questions .footer ul li.makes_this a:link,
-#questions .footer ul li.makes_this a:visited {
+#questions .footer ul li.makesthis a:link,
+#questions .footer ul li.makesthis a:visited {
 	background-position: left top;
 }
-#questions .footer ul li.makes_this a:hover,
-#questions .footer ul li.makes_this a:active {
+#questions .footer ul li.makesthis a:hover,
+#questions .footer ul li.makesthis a:active {
 	background-position: right top;
 }
 
