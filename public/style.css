@@ -126,7 +126,7 @@ h2.description {
 	font-size: 48px;
 	font-weight: bold;
 	letter-spacing: 0.1em;
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 	}
 p.about {
 	display: block;
@@ -135,26 +135,26 @@ p.about {
 p.about a {
 	display: block;
 	background-color: #4e8db9;
-	margin-right: 240px;
-	margin-left: 240px;
-	color: #FFF;
+	margin-left: 360px;
+	margin-right: 110px;
 	text-decoration: none;
 	font-size: 12px;
 	line-height: 30px;
 	font-weight: bold;
 	letter-spacing: 0.1em;
 	text-align: center;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	color: #4e8db9;
 	}
 p.about a:link,
 p.about a:visited {
-	background-color: #4e8db9;
+	background-color: #fff;
 	}
 p.about a:hover,
 p.about a:active {
 	background-color: #306c97;
+	color: #FFF;
 	}
 #footer {
 	font-size: 93%;
