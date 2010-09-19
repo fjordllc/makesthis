@@ -11,6 +11,7 @@ what_do_you_make_next: 次に何を作りますか？
 api: API
 update_information: 更新情報
 description_for_profile: インタビューに答える要領で答えてみてください。英語版・日本語版があるので名前や肩書きは英語で書き、質問には英語・日本語を併記すると便利です。写真は幅500ピクセル以上の大きなものを指定するとぴったりフィットします。
+about_makesthis: MAKES THISについて
 profile:
   photo_url: 写真URL
   name: 名前

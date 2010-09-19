@@ -11,6 +11,7 @@ what_do_you_make_next: What are you planning to make next?
 api: API
 update_information: Information
 description_for_profile: 500pixel over photo is recomended.
+about_makesthis: about MAKES THIS
 profile:
   photo_url: Photo URL
   name: Name
