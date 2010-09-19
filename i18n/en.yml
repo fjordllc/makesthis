@@ -1,18 +1,21 @@
-what_make_you: 何作ってる人？
-submit: 登録
-register: 登録
-register_by_twitter: Twitterで登録
-profile_service_for_maker: 作る人のプロフィールサービス
-who_are_you: あなたは誰ですか？
-what_did_you_make: 何を作りましたか？
-why_did_you_make: 何故それを作りましたか？
-what_do_you_make_next: 次に何を作りますか？
+what_make_you: What have you made?
+submit: Submit
+register: Register
+register_by_twitter: Register by Twitter
+register_or_edit: Register or Edit
+profile_service_for_maker: Profile service for Maker
+who_are_you: Who are you?
+what_did_you_make: What have you made?
+why_did_you_make: Why did you make that?
+what_do_you_make_next: What are you planning to make next?
 api: API
+update_information: Information
+description_for_profile: 500pixel over photo is recomended.
 profile:
-  photo_url: 写真URL
-  name: 名前
-  description: 所属・肩書き・職業
-  who_are_you: あなたは誰ですか？
-  what_did_you_make: 何を作りましたか？
-  why_did_you_make: 何故作りましたか？
-  what_do_you_make_next: 次に何を作りますか？
+  photo_url: Photo URL
+  name: Name
+  description: Description
+  who_are_you: Who are you?
+  what_did_you_make: What have you made?
+  why_did_you_make: Why did you make that?
+  what_do_you_make_next: What are you planning to make next?

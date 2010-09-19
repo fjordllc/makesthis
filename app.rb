@@ -29,17 +29,17 @@ class Profile
   property :updated_at, DateTime
 end
 
-#DataMapper.auto_migrate!
-
 enable :sessions, :static
 set :haml, :attr_wrapper => '"', :ugly => false
 set :sass, :style => :expanded
 set :default_locale, 'ja'
-set :twitter_oauth_config,
-      :key => 'Kx1N5EQ9nQ7SQlu9i7EYA',
-      :secret => 'EgNg5Rh5EyaCqNILYVTrdYDDnSWhxr8Z51d8eal70GI',
-      :callback => (ENV['TWITTER_OAUTH_CALLBACK_URL'] || 'http://localhost:9393/auth'),
-      :login_template => {:text => '<a href="/connect">Login using Twitter</a>'}
+set :twitter_oauth_config, Proc.new {
+  config = YAML.load(open('config.yml'))
+  {:key => ENV['TWITTER_OAUTH_KEY'] || config['twitter_oauth_key'],
+   :secret => ENV['TWITTER_OAUTH_SECRET'] || config['twitter_oauth_secret'],
+   :callback => ENV['TWITTER_OAUTH_CALLBACK_URL'] || config['twitter_oauth_callback_url'],
+   :login_template => {:text => '<a href="/connect">Login using Twitter</a>'}}
+}
 use Rack::Exceptional, ENV['EXCEPTIONAL_API_KEY'] || 'key' if ENV['RACK_ENV'] == 'production'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{File.expand_path(File.dirname(__FILE__))}/development.sqlite3")
 
@@ -48,6 +48,8 @@ before do
   unless %w(localhost makesthis-com makesthis).include?(subdomain)
     params[:twitter_name] = subdomain
   end
+
+  session[:locale] = params[:locale] if params[:locale]
 end
 
 get '/' do
@@ -76,11 +78,7 @@ post '/profile' do
   @profile.icon_url = user.info['profile_image_url']
   @profile.homepage_url = user.info['url']
   if @profile.save
-    if ENV['RACK_ENV'] == 'production'
-      redirect "http://#{user.info['screen_name']}.makesthis.com/"
-    else
-      redirect "http://#{user.info['screen_name']}.localhost:9393/"
-    end
+    redirect "http://#{user.info['screen_name']}.#{domain}/"
   else
     haml :'profile/edit'
   end
@@ -89,5 +87,13 @@ end
 helpers do
   def logged_in?
     !user.nil? and user.client.authorized?
+  end
+
+  def root_url
+    "http://#{domain}/"
+  end
+
+  def domain
+    ENV['RACK_ENV'] == 'production' ? 'makesthis.com' : 'localhost:9393'
   end
 end

@@ -15,9 +15,15 @@
     #footer
       %ul.nav
         %li
-          %a{:href => 'http://fjord.jp/love'} 更新情報
+          %a{:href => "#{root_url}profile/edit"}= t.register_or_edit
+        %li
+          %a{:href => 'http://fjord.jp/love'}= t.update_information
         %li
           %a{:href => '/api'} API
+        %li
+          %a{:href => '?locale=en'} English
+        %li
+          %a{:href => '?locale=ja'} 日本語
       %address 
         &copy; 2010 <a href="/">MAKES THIS</a> Created by <a href="http://fjord.jp/">FJORD, LLC</a>
     :javascript
