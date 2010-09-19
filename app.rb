@@ -34,7 +34,7 @@ set :haml, :attr_wrapper => '"', :ugly => false
 set :sass, :style => :expanded
 set :default_locale, 'ja'
 set :twitter_oauth_config, Proc.new {
-  config = YAML.load(open('config.yml'))
+  config = YAML.load(open('config.yml')) if ENV['RACK_ENV'] != 'production'
   {:key => ENV['TWITTER_OAUTH_KEY'] || config['twitter_oauth_key'],
    :secret => ENV['TWITTER_OAUTH_SECRET'] || config['twitter_oauth_secret'],
    :callback => ENV['TWITTER_OAUTH_CALLBACK_URL'] || config['twitter_oauth_callback_url'],
