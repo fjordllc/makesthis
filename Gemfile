@@ -1,7 +1,6 @@
 source :gemcutter
 gem 'i18n', '0.4.1'
 gem 'sinatra', '1.0'
-gem 'sinatra-twitter-oauth'
 gem 'haml', '3.0.18'
 gem 'builder'
 gem 'rake'

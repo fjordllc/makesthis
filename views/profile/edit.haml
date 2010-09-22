@@ -1,7 +1,8 @@
 .content
   %h1
     %a{:href => '/'}= t.what_make_you
-  = #%h2.title= t.profile_service_for_maker
+  %h2.title= t.profile_service_for_maker
+  %p= t.description_for_profile
 %form{:action => '/profile', :method => 'post', :id => 'profile_form'}
   %h2.title= t.register_or_edit
   - unless @profile.errors.empty?

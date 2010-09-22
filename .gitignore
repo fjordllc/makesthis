@@ -5,3 +5,4 @@ Gemfile.lock
 tmp/*.log
 *.csv
 coverage
+config.yml
