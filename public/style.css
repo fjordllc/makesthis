@@ -4,7 +4,7 @@ Code licensed under the BSD License:
 http://developer.yahoo.com/yui/license.html
 version: 2.8.1
 */
-html{color:#727272;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+html{color:#727272;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}a{overflow:hidden}
 
 /*
 Copyright (c) 2010, Yahoo! Inc. All rights reserved.
@@ -125,7 +125,6 @@ h2.description {
 	text-align: center;
 	font-size: 48px;
 	font-weight: bold;
-	letter-spacing: 0.1em;
 	margin-bottom: 10px;
 	}
 p.about {
@@ -141,7 +140,6 @@ p.about a {
 	font-size: 12px;
 	line-height: 30px;
 	font-weight: bold;
-	letter-spacing: 0.1em;
 	text-align: center;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -332,7 +330,6 @@ p.about a:active {
 	text-align: center;
 	font-size: 48px;
 	font-weight: bold;
-	letter-spacing: 0.1em;
 	margin-bottom: 40px;
 	background-image: url(/images/content_h1.png);
 	background-repeat: no-repeat;
@@ -354,9 +351,8 @@ p.about a:active {
 .content h1 a {
 	display: block;
 	color: #4e8db9;
-	font-size: 48px;
+	font-size: 28px;
 	font-weight: bold;
-	letter-spacing: 0.1em;
 	line-height: 84px;
 	height: 84px;
 	padding-left: 220px;
