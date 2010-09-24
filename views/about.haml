@@ -1,0 +1,15 @@
+#person
+  %p.portrait
+    %img{:src => '/images/about_logo.png', :height => 140, :width => 640, :alt => 'MAKES THIS'}
+  %h1.name= t.what_is_makesthis
+#questions
+  .question
+    %h2.title= t.the_profile_service_for_people_who_make_things
+    = t.what_about_makesthis_1
+  .question
+    %h2.title= t.when_is_it_useful
+    = t.what_about_makesthis_2
+  .footer
+    %ul
+      %li.makesthis
+        %a{:href => "#{root_url}"} MAKES THIS

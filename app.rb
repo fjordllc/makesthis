@@ -65,6 +65,10 @@ get '/api' do
   haml :api
 end
 
+get '/about' do
+  haml :about
+end
+
 get '/profile/edit' do
   login_required
   @profile = Profile.first_or_new(:twitter => user.info['screen_name'])

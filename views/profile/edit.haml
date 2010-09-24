@@ -14,6 +14,14 @@
   .section
     %label{:for => 'profile_photo_url'}= t.profile.photo_url
     %input{:type => 'text', :class => 'text', :id => 'profile_photo_url', :name => 'profile[photo_url]', :value => @profile.photo_url}
+    .description
+      %h3 写真の登録方法
+      %p ブラウザから使いたい写真を選択。その写真の上で右クリック。
+      %ul
+        %li Internet Exproler : プロパティ→アドレス（URL）の右にあるURLをコピー
+        %li Safari : イメージのアドレスをコピーを選択
+        %li Firefox・Goole Chrome : 画像のURLをコピーを選択
+      %p 写真（URL）のボックスにペースト。
   .section
     %label{:for => 'profile_name'}= t.profile.name
     %input{:type => 'text', :class => 'text', :id => 'profile_name', :name => 'profile[name]', :value => @profile.name}
