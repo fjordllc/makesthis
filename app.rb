@@ -8,8 +8,10 @@ require 'dm-migrations'
 require 'dm-timestamps'
 require 'dm-validations'
 require 'dm-types'
+require 'dm-serializer'
+require 'dm-pager'
 require 'exceptional'
-require 'builder'
+require 'json'
 
 class Profile
   include DataMapper::Resource
@@ -29,10 +31,11 @@ class Profile
   property :updated_at, DateTime
 end
 
-enable :sessions, :static
+enable :static
 set :haml, :attr_wrapper => '"', :ugly => false
 set :sass, :style => :expanded
 set :default_locale, 'ja'
+set :api_per_page, 100
 set :twitter_oauth_config, Proc.new {
   config = YAML.load(open('config.yml')) if ENV['RACK_ENV'] != 'production'
   {:key => ENV['TWITTER_OAUTH_KEY'] || config['twitter_oauth_key'],
@@ -86,6 +89,25 @@ post '/profile' do
   else
     haml :'profile/edit'
   end
+end
+
+get '/profiles.js' do
+  per_page = params[:per_page].blank? ? settings.api_per_page : params[:per_page].to_i
+  per_page = per_page > settings.api_per_page ? settings.api_per_page : per_page
+
+  sort = %w(id created_at updated_at).include?(params[:sort]) ? params[:sort] : 'id'
+  order = %w(asc desc).include?(params[:order]) ? params[:order] : 'asc'
+
+  profiles = Profile.all(:order => sort.to_sym.send(order)).
+               page(params[:page], :per_page => per_page)
+  content_type :json
+  profiles.to_json
+end
+
+get '/profiles/:twitter.js' do |twitter|
+  profile = Profile.first(:twitter => twitter)
+  content_type :json
+  profile.to_json
 end
 
 helpers do

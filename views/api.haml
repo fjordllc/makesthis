@@ -2,4 +2,50 @@
   %h1
     %a{:href => '/'}= t.what_make_you
   %h2.title= t.api
-  %p Comming soon...
+  %p プロフィール情報をJSON形式で返すAPI。
+  %h3 プロフィール一覧API
+  %h4 URL
+  %p http://makesthis.com/profiles.js
+  %h4 パラメーター
+  %p 例:http://makesthis.com/profiles.js?page=2&amp;per_page=20
+  %dl
+    %dt page
+    %dd ページ数。デフォルトは1。
+    %dt per_page
+    %dd 1回のリクエストに含めるプロフィール数。デフォルトは100。(最大100)
+    %dt sort
+    %dd 並び順。選べる項目はid, created_at, updated_at。デフォルトはid。
+    %dt order
+    %dd 並び順の昇順・降順。選べる項目はasc, desc。デフォルトはasc。
+  %h3 プロフィール詳細API
+  %h4 URL
+  %p http://makesthis.com/profiles/Twitterスクリーンネーム.js
+  %p 例:http://makesthis.com/profiles/komagata.js
+  %h4 フォーマット
+  %dl
+    %dt id
+    %dd ID
+    %dt twitter
+    %dd Twitterスクリーンネーム
+    %dt name
+    %dd 名前
+    %dt description
+    %dd 所属・肩書き・職業
+    %dt who_are_you
+    %dd あなたは誰ですか？
+    %dt what_did_you_make
+    %dd 何を作りましたか？
+    %dt why_did_you_make
+    %dd 何故作りましたか？
+    %dt what_do_you_make_next
+    %dd 次に何を作りますか？
+    %dt photo_url
+    %dd プロフィール写真のURL
+    %dt icon_url
+    %dd Twitterアイコン画像のURL
+    %dt homepage_url
+    %dd ホームページURL
+    %dt created_at
+    %dd 作成日時
+    %dt updated_at
+    %dd 更新日時
