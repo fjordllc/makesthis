@@ -1,6 +1,7 @@
 #person
   %p.portrait
-    %img{:src => '/images/about_logo.png', :height => 140, :width => 640, :alt => 'MAKES THIS'}
+    %a{:href => "#{root_url}"}
+      %img{:src => '/images/about_logo.png', :height => 140, :width => 640, :alt => 'MAKES THIS'}
   %h1.name= t.what_is_makesthis
 #questions
   .question
