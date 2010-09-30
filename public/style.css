@@ -1,7 +1,7 @@
 /*
 Copyright (c) 2010, Yahoo! Inc. All rights reserved.
 Code licensed under the BSD License:
-http://developer.yahoo.com/yui/license.html
+http://developer.yahoo.com/yui/license.html	
 version: 2.8.1
 */
 html{color:#727272;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}a{overflow:hidden}
@@ -10,7 +10,7 @@ html{color:#727272;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6
 Copyright (c) 2010, Yahoo! Inc. All rights reserved.
 Code licensed under the BSD License:
 http://developer.yahoo.com/yui/license.html
-version: 2.8.1
+version: 2.8.1ß
 */
 body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
@@ -365,13 +365,53 @@ p.about a:active {
 	display: block;
 	margin-bottom: 0.8em;
 	color: #4e8db9;
-	font-size: 16px;
+	font-size: 18px;
+	line-height: 1.4;
+	background-image: url(images/h3.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #EDEDED;
+	padding-bottom: 2px;
+	}
+.content h4 {
+	display: block;
+	margin-bottom: 1em;
+	color: #4e8db9;
+	font-size: 14px;
 	line-height: 1.4;
 	}
 .content p {
 	margin-bottom: 2em;
 	line-height: 1.7em;
 	font-size: 100%;
+	}
+.content dl {
+	margin-bottom: 2em;
+	margin-left: 1em;
+	}
+.content dt {
+	margin-bottom: 0.4em;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #ccc;
+	display: block;
+	padding-bottom: 0.2em;
+	font-weight: bold;
+	}
+
+.content dt:before {
+	content:"\0025a0";
+	color: #4e8db9;
+	margin-right: 3px;
+	font-size: 12px;
+}
+
+.content dd {
+	margin-bottom: 1.8em;
+	padding-left: 20px;
+	display: block;
 	}
 .content ul {
 	margin-bottom: 2em;
@@ -383,7 +423,10 @@ p.about a:active {
 .content ol {
 	margin-bottom: 2em;
 	font-size: 100%;
-	}
+	padding-left: 25px;
+	list-style-position: outside;
+	list-style-type: decimal !important;
+}
 .content li {
 	margin-bottom: 0.7em;
 	}

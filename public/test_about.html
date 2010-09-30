@@ -7,56 +7,81 @@
 </head>
 
   <body>
-    <p>&nbsp;</p>
-    <div id="person">
-      <p class="portrait">
-        <img src="images/about_logo.png" width="640" height="140" alt="MAKES THIS" />
-      </p>
-      <h1 class="name">MAKES THIS とは？</h1>
-  </div>
-    <div id="questions">
-      <div class="question">
-        <h2 class="title">作ってる人の為のプロフィールサービス</h2>
-        <p>もしあなたがものを作ってる人ならば、経歴や就職している企業名や肩書きよりも、具体的に「何を作ってる？」を知りたい。きっと多くの人がそう思っているはず。そういう人に向けて情報を発信できるサービスです。 </p>
-</div>
-      <div class="question">
+    <div class="content">
+      <h1>
+        <a href="/">何作ってる人？</a>
+      </h1>
 
-        <h2 class="title">こんなときに便利</h2>
-        <p>勉強会や交流会など、多くの人が集まるイベントでは、そこに集まった全員と話すことはなかなか困難です。イベント参加者が「MAKES THIS」を使っていれば、前もって話したい人をチェックすることができます。</p>
-        
-        <p>これから関わる人があらかじめ「MAKES THIS」を見ておくことによって、自己紹介の時間も削減でき、その分もっと進んだ地点から会話をスタートすることが出来ます。<br />
-        また、作っているものを知っておくことによって、質問や話題を用意する時間も生まれます。</p>
+      <h2 class="title">API</h2>
+      <p>プロフィール情報をJSON形式で返します。</p>
+      <h3>プロフィール一覧API</h3>
+      <h4>URL</h4>
+      <p>http://makesthis.com/profiles.js</p>
+      <h4>パラメーター</h4>
 
-</div>
+      <p>例:http://makesthis.com/profiles.js?page=2&amp;per_page=20</p>
+      <dl>
+        <dt>page</dt>
+        <dd>ページ数。デフォルトは1。</dd>
+        <dt>per_page</dt>
+        <dd>1回のリクエストに含めるプロフィール数。デフォルトは100。(最大100)</dd>
 
-<!--
-      <div class="question">
+        <dt>sort</dt>
+        <dd>並び順。選べる項目はid, created_at, updated_at。デフォルトはid。</dd>
+        <dt>order</dt>
+        <dd>並び順の昇順・降順。選べる項目はasc, desc。デフォルトはasc。</dd>
+      </dl>
+      <h3>プロフィール詳細API</h3>
 
-        <h2 class="title">MAKES THIS を使ったサービス</h2>
-        <p></p>
+      <h4>URL</h4>
+      <p>http://makesthis.com/profiles/Twitterスクリーンネーム.js</p>
+      <p>例:http://makesthis.com/profiles/komagata.js</p>
+      <h4>レスポンスフォーマット</h4>
+      <dl>
+        <dt>id</dt>
 
-</div>
--->
-      <div class="footer">
-        <ul>
-          <li class="makesthis">
-            <a href="http://makesthis.com/">MAKES THIS</a>
-          </li>
+        <dd>ID</dd>
+        <dt>twitter</dt>
+        <dd>Twitterスクリーンネーム</dd>
+        <dt>name</dt>
+        <dd>名前</dd>
+        <dt>description</dt>
 
-        </ul>
-      </div>
+        <dd>所属・肩書き・職業</dd>
+        <dt>who_are_you</dt>
+        <dd>あなたは誰ですか？</dd>
+        <dt>what_did_you_make</dt>
+        <dd>何を作りましたか？</dd>
+        <dt>why_did_you_make</dt>
+
+        <dd>何故作りましたか？</dd>
+        <dt>what_do_you_make_next</dt>
+        <dd>次に何を作りますか？</dd>
+        <dt>photo_url</dt>
+        <dd>プロフィール写真のURL</dd>
+        <dt>icon_url</dt>
+
+        <dd>Twitterアイコン画像のURL</dd>
+        <dt>homepage_url</dt>
+        <dd>ホームページURL</dd>
+        <dt>created_at</dt>
+        <dd>作成日時</dd>
+        <dt>updated_at</dt>
+
+        <dd>更新日時</dd>
+      </dl>
     </div>
     <div id="footer">
       <ul class="nav">
         <li>
-          <a href="http://makesthis.com/profile/edit">登録・更新</a>
+          <a href="http://localhost:9393/profile/edit">登録・更新</a>
         </li>
 
         <li>
           <a href="http://fjord.jp/love">更新情報</a>
         </li>
         <li>
-          <a href="http://makesthis.com/api">API</a>
+          <a href="http://localhost:9393/api">API</a>
         </li>
         <li>
           <a href="?locale=en">English</a>
@@ -68,13 +93,13 @@
       </ul>
       <address>
         &copy; 2010
-        <a href="http://makesthis.com/">MAKES THIS</a>
+        <a href="http://localhost:9393/">MAKES THIS</a>
 
         Created by
         <a href="http://fjord.jp/">FJORD, LLC</a>
       </address>
     </div>
-  <script type="text/javascript">
+    <script type="text/javascript">
       //<![CDATA[
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-2927688-11']);
