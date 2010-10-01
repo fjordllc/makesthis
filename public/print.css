@@ -49,19 +49,20 @@ body {
 	display:block;
 	text-align: center;
 	height: 72px;
-	padding-top: 5mm;
+	padding-top: 4mm;
 }
 #information_print .mention {
 	display:block;
 	text-align: center;
 	font-size:16pt;
 	font-weight: bold;
-	padding-top: 4mm;
+	padding-top: 3mm;
 }
 #information_print .text {
 	display:block;
-	padding-top: 4mm;
-	height: 34mm;
+	padding-top: 3mm;
+	height: 37mm;
+	font-size: 9pt;
 }
 #information_print .qr_code {
 	display:block;
