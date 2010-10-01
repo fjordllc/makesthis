@@ -14,11 +14,14 @@ gem 'dm-validations', '1.0.2'
 gem 'dm-types',       '1.0.2'
 gem 'dm-serializer',  '1.0.2'
 gem 'dm-pager'
-gem 'dm-sqlite-adapter'
-gem 'shoulda'
+gem 'padrino-helpers'
 
 group :production do
   gem 'dm-postgres-adapter'
+end
+
+group :development do
+  gem 'dm-sqlite-adapter'
 end
 
 group :test do

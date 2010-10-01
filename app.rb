@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/r18n'
 require 'sinatra-twitter-oauth'
+require 'padrino-helpers'
 require 'haml'
 require 'sass'
 require 'dm-core'
@@ -29,6 +30,15 @@ class Profile
   property :homepage_url, Text, :format => :url
   property :created_at, DateTime
   property :updated_at, DateTime
+
+  validates_presence_of :twitter
+  validates_presence_of :name
+  validates_presence_of :description
+  validates_presence_of :who_are_you
+  validates_presence_of :what_did_you_make
+  validates_presence_of :why_did_you_make
+  validates_presence_of :what_do_you_make_next
+  validates_presence_of :photo_url
 end
 
 enable :static
@@ -60,7 +70,11 @@ get '/' do
     haml :index
   else
     @profile = Profile.first(:twitter => params[:twitter_name])
-    haml :'profile/show'
+    if @profile
+      haml :'profile/show'
+    else
+      404
+    end
   end
 end
 
@@ -85,7 +99,7 @@ post '/profile' do
   @profile.icon_url = user.info['profile_image_url']
   @profile.homepage_url = user.info['url']
   if @profile.save
-    redirect "http://#{user.info['screen_name']}.#{domain}/"
+    redirect "http://#{twitter2domain(user.info['screen_name'])}.#{domain}/"
   else
     haml :'profile/edit'
   end
@@ -110,9 +124,17 @@ get '/profiles/:twitter.js' do |twitter|
   profile.to_json
 end
 
+not_found do
+  haml :'404'
+end
+
 helpers do
   def logged_in?
     !user.nil? and user.client.authorized?
+  end
+
+  def twitter2domain(str)
+    str.gsub(/_/, '-')
   end
 
   def root_url

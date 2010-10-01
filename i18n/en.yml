@@ -18,6 +18,8 @@ when_is_it_useful: When is it useful?
 what_about_makesthis_1: <p>If you are someone who makes things, instead of wanting to know about a person's background, title or the name of the company they work for, you would want to know more specifically "what do you make?". Surely a lot of people must feel this way. This is an information transmission service aimed at this type of people.</p>
 what_about_makesthis_2: <p>At events where a lot of people get together, such as study groups or social gatherings, it is fairly difficult to get to speak to everyone. If people attending an event used MAKES THIS, they could check out in advance who they wanted to speak to.</p><p>If people were to check MAKES THIS beforehand, it would reduce the time needed for self introduction, allowing them to begin their conversation from a more advanced starting point.<br />Also, as they would already know what the other person makes, it would give them time to prepare any questions or topics of conversation in advance.</p>
 logout: Logout
+error_in_profile: Error
+page_not_found: Page is not found
 profile:
   photo_url: Photo URL
   name: Name
