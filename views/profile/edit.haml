@@ -7,7 +7,7 @@
   %h2.title= t.register_or_edit
   - unless @profile.errors.empty?
     #errorExplanation.errorExplanation
-      %h2= t.error
+      %h2= t.error_in_profile
       %ul
         - @profile.errors.each do |error|
           %li= error
