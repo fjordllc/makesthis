@@ -26,3 +26,12 @@
         %a{:href => @profile.homepage_url}
       %li.makesthis
         %a{:href => "#{root_url}"} MAKES THIS
+#information_print
+  .icon
+    %h4
+      %img{:src => @profile.photo_url}
+  .mention== @#{@profile.twitter} 
+  .text= @profile.who_are_you
+  .qr_code
+    %img{:src => "http://chart.apis.google.com/chart?cht=qr&chs=145x145&chl=http%3A%2F%2F#{twitter2domain(@profile.twitter)}.makesthis.com%2F"}
+  .makesthis_url== http://#{twitter2domain(@profile.twitter)}.makesthis.com/
