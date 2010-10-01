@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* CSS Document */
+
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html	
+version: 2.8.1
+*/
+html{color:#727272;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{
+	border:0;
+}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}a{overflow:hidden}
+
+.portrait,
+.question,
+.footer,
+#footer {
+	display:none
+	}
+body {
+	line-height: 1.5;
+	letter-spacing: 1px;
+	height: 140mm;
+	width: 92mm;
+	border: 1px dotted #999;
+	padding: 4mm;
+	font-size:10pt
+}
+.footer ul {
+	display:none
+	}
+	
+.name {
+	font-size:20pt;
+	font-weight: bold;
+	border-bottom-width: 1mm;
+	border-bottom-style: solid;
+	border-bottom-color: #4E8DB9;
+}
+.summary {
+	font-size:10pt;
+	display:block;
+	text-align: right;
+	border-top-width: 1pt;
+	border-top-style: solid;
+	border-top-color: #aaa;
+	padding-top: 1mm;
+	}
+#information_print .icon {
+	display:block;
+	text-align: center;
+	height: 72px;
+	padding-top: 5mm;
+}
+#information_print .mention {
+	display:block;
+	text-align: center;
+	font-size:16pt;
+	font-weight: bold;
+	padding-top: 4mm;
+}
+#information_print .text {
+	display:block;
+	padding-top: 4mm;
+	height: 34mm;
+}
+#information_print .qr_code {
+	display:block;
+	text-align: center;
+}
+#information_print .makesthis_url {
+	display:block;
+	padding-top: 2mm;
+	text-align: center;
+}

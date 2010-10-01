@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>無題ドキュメント</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+  <body>
+    <div class="content">
+      <h1>
+        <a href="/">何作ってる人？</a>
+      </h1>
+
+      <h2 class="title">作る人のプロフィールサービス</h2>
+      <p>インタビューに答える要領で答えてみてください。英語版・日本語版があるので名前や肩書きは英語で書き、質問には英語・日本語を併記すると便利です。写真は幅500ピクセル以上の大きなものを指定するとぴったりフィットします。</p>
+    </div>
+    <form action="/profile" id="profile_form" method="post">
+      <h2 class="title">登録・更新</h2>
+      <div class="section">
+        <label for="profile_photo_url">写真URL</label>
+        <input class="text" id="profile_photo_url" name="profile[photo_url]" type="text" value="http://farm5.static.flickr.com/4146/4997815345_e35b29e2eb_z.jpg" />
+
+<div class="description">
+<h3>写真の登録方法</h3>
+
+<p>ブラウザから使いたい写真を選択。その写真の上で右クリック。</p>
+<ul>
+<li>Internet Exproler : プロパティ→アドレス（URL）の右にあるURLをコピー</li>
+<li>Safari : イメージのアドレスをコピーを選択</li>
+<li>Firefox・Goole Chrome : 画像のURLをコピーを選択</li>
+</ul>
+<p>写真（URL）のボックスにペースト。</p>
+</div>
+
+      </div>
+      <div class="section">
+        <label for="profile_name">名前</label>
+        <input class="text" id="profile_name" name="profile[name]" type="text" value="Teppei Machida" />
+      </div>
+      <div class="section">
+        <label for="profile_description">所属・肩書き・職業</label>
+
+        <input class="text" id="profile_description" name="profile[description]" type="text" value="Designer of FJORD,LLC" />
+      </div>
+      <div class="section">
+        <label for="profile_who_are_you">あなたは誰ですか？</label>
+        <textarea cols="50" id="profile_who_are_you" name="profile[who_are_you]" rows="10"><p>町田哲平です。<br />&#x000A;<a href-"http://machida.fjord.jp">FJORD,LLC</a>でwebアプリのデザイン、コーディングをしています。</p></textarea>
+      </div>
+      <div class="section">
+        <label for="profile_what_did_you_make">何を作りましたか？</label>
+
+        <textarea cols="50" id="profile_what_did_you_make" name="profile[what_did_you_make]" rows="10"><p>ものを作っている人のためのプロフィール公開サービス、MAKES THIS というサービスを作りました。<br />&#x000A;<a href="http://makesthis.com/">http://makesthis.com/</a></p></textarea>
+      </div>
+      <div class="section">
+        <label for="profile_why_did_you_make">何故作りましたか？</label>
+        <textarea cols="50" id="profile_why_did_you_make" name="profile[why_did_you_make]" rows="10"><p>私自身デザイナーとしてwebアプリの開発などもの作りをしているので、自分と関わった人が、ものを作る職種に就いていたり、ものを作る活動をしている人だったら、その人の経歴や就職している企業名や肩書きよりも、具体的に「何を作ってる人」なのかを知りたいです。</p>&#x000A;&#x000A;<p>とはいえ、初対面の方に「何作ってる人？」と聞くのはなかなか難しいものがあります。</p>&#x000A;&#x000A;<p>一番知りたい情報、「何を作ってる人？」をシンプルに知ることが出来るサービスがあったら便利なのではないかと思い、「MAKES THIS」を作りました。</p>&#x000A;&#x000A;<p>例えば勉強会や交流会など、多くの人が集まるイベントでは、そこに集まった全員と話すことはなかなか困難です。そのイベントで以前から自分が気に入ってたもの、興味を持っていたもの、自分と似た感性を感じるものを作っている人がそこにいて、もしそのとき、その人と話せば有意義な情報交換が得られたということがあったかもしれません。イベント参加者が「MAKES THIS」を使うことによって、何を作っている人か知らなかった為に、その人と接触する機会を逃していた、ということがもうなくなるかもしれません。</p>&#x000A;&#x000A;<p>これから関わる人があらかじめ「MAKES THIS」を見ておくことによって、自己紹介の時間も削減でき、その分もっと進んだ地点から会話をスタートすることが出来ます。<br />また、あらかじめ作ったものを知ることによって、聞きいてみたいこと、話し合ってみたい話題を用意する時間も生まれます。</p>&#x000A;&#x000A;<p>というわけで、色々と役に立つ可能性があるサービスです。もし、あなたがものを作っている人だったら「MAKES THIS」に是非登録をしてみてください。</p>&#x000A;&#x000A;<p><a href="http://makesthis.com/profile/edit">登録はこちらのページから</a> ※要twitterアカウント</p></textarea>
+      </div>
+      <div class="section">
+
+        <label for="profile_what_do_you_make_next">次に何を作りますか？</label>
+        <textarea cols="50" id="profile_what_do_you_make_next" name="profile[what_do_you_make_next]" rows="10"><p>とりあえずは「MAKES THIS」の機能追加をもう少し。<br />&#x000A;それぞれのユーザーが任意のユーザーリストを作れる機能を入れたいです。</p></textarea>
+      </div>
+      <p class="button">
+        <input type="submit" value="登録・更新" />
+      </p>
+    </form>
+    <div id="footer">
+
+      <ul class="nav">
+        <li>
+          <a href="http://makesthis.com/profile/edit">登録・更新</a>
+        </li>
+        <li>
+          <a href="http://fjord.jp/love">更新情報</a>
+        </li>
+        <li>
+
+          <a href="http://makesthis.com/api">API</a>
+        </li>
+        <li>
+          <a href="?locale=en">English</a>
+        </li>
+        <li>
+          <a href="?locale=ja">日本語</a>
+
+        </li>
+      </ul>
+      <address>
+        &copy; 2010
+        <a href="http://makesthis.com/">MAKES THIS</a>
+        Created by
+        <a href="http://fjord.jp/">FJORD, LLC</a>
+      </address>
+
+    </div>
+    <script type="text/javascript">
+      //<![CDATA[
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-2927688-11']);
+        _gaq.push(['_setDomainName', '.makesthis.com']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      //]]>
+    </script>
+  </body>
+</html>
