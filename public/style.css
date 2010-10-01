@@ -127,6 +127,14 @@ h2.description {
 	font-weight: bold;
 	margin-bottom: 70px;
 	}
+h2.error {
+	display: block;
+	color: #4e8db9;
+	text-align: center;
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 240px;
+	}
 p.about {
 	display: block;
 	margin-bottom: 160px;
