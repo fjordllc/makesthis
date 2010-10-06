@@ -150,6 +150,7 @@ p.about a {
 	font-weight: bold;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
+	border-radius: 8px;
 	color: #4e8db9;
 	text-align: center;
 	}
@@ -281,6 +282,51 @@ p.about a:active {
 	float: left;
 	margin-right: 15px;
 }
+#questions .footer ul li.print a {
+	width: auto;
+	text-indent: 0px;
+	margin-right: 0px;
+	line-height: 28px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 11px;
+	padding-right: 1.1em;
+	padding-left: 1.1em;
+	-moz-border-radius: 14px;
+	-webkit-border-radius: 14px;
+	border-radius: 14px;
+}
+#questions .footer ul li.print a:link,
+#questions .footer ul li.print a:visited {
+	background-color: #018db7;
+	color: #FFF;
+	text-decoration: none;
+}
+#questions .footer ul li.print a:hover,
+#questions .footer ul li.print a:active {
+	background-color: #50c7eb;
+	color: #FFF;
+	text-decoration: none;
+}
+
+#questions .footer ul li.print_description a {
+	width: 20px;
+	text-indent: 0px;
+	margin-right: 0px;
+	line-height: 28px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+}
+#questions .footer ul li.print_description a:link,
+#questions .footer ul li.print_description a:visited {
+	color: #018DB7;
+}
+#questions .footer ul li.print_description a:hover,
+#questions .footer ul li.print_description a:active {
+	color: #50c7eb;
+}
+
 #questions .footer ul li a:link,
 #questions .footer ul li a:visited {
 	background-position: left top;
@@ -572,4 +618,15 @@ select:focus {
 .fieldWithErrors input,
 .fieldWithErrors textarea {
 	background-color: #fdd8da !important;
+	}
+
+
+#information_print {
+	direction:none !important;}
+
+
+#namecard img {
+	float:right;
+	margin-bottom: 15px;
+	margin-left: 15px;	
 	}
