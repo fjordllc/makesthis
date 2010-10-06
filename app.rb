@@ -1,13 +1,16 @@
 require 'sinatra'
 require 'sinatra/r18n'
-require 'sinatra-twitter-oauth'
 require 'padrino-helpers'
+require 'oauth'
+require 'oauth/consumer'
+require 'grackle'
 require 'haml'
 require 'sass'
 require 'dm-core'
 require 'dm-migrations'
 require 'dm-timestamps'
 require 'dm-validations'
+#require 'dm-validations-i18n'
 require 'dm-types'
 require 'dm-serializer'
 require 'dm-pager'
@@ -39,30 +42,58 @@ class Profile
   validates_presence_of :why_did_you_make
   validates_presence_of :what_do_you_make_next
   validates_presence_of :photo_url
+
+  def domain
+    self.twitter.gsub(/_/, '-')
+  end
 end
 
-enable :static
+enable :sessions, :static
 set :haml, :attr_wrapper => '"', :ugly => false
 set :sass, :style => :expanded
 set :default_locale, 'ja'
 set :api_per_page, 100
-set :twitter_oauth_config, Proc.new {
-  config = YAML.load(open('config.yml')) if ENV['RACK_ENV'] != 'production'
-  {:key => ENV['TWITTER_OAUTH_KEY'] || config['twitter_oauth_key'],
-   :secret => ENV['TWITTER_OAUTH_SECRET'] || config['twitter_oauth_secret'],
-   :callback => ENV['TWITTER_OAUTH_CALLBACK_URL'] || config['twitter_oauth_callback_url'],
-   :login_template => {:text => '<a href="/connect">Login using Twitter</a>'}}
-}
 use Rack::Exceptional, ENV['EXCEPTIONAL_API_KEY'] || 'key' if ENV['RACK_ENV'] == 'production'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{File.expand_path(File.dirname(__FILE__))}/development.sqlite3")
 
 before do
+  session[:oauth] ||= {}
+
+  config = YAML.load(open('config.yml'))
+  consumer_key = ENV['TWITTER_OAUTH_KEY'] || config['twitter_oauth_key']
+  consumer_secret = ENV['TWITTER_OAUTH_SECRET'] || config['twitter_oauth_secret']
+
+  @consumer ||= OAuth::Consumer.new(consumer_key, consumer_secret, :site => "http://twitter.com")
+  
+  if !session[:oauth][:request_token].nil? && !session[:oauth][:request_token_secret].nil?
+    @request_token = OAuth::RequestToken.new(@consumer, session[:oauth][:request_token], session[:oauth][:request_token_secret])
+  end
+  
+  if !session[:oauth][:access_token].nil? && !session[:oauth][:access_token_secret].nil?
+    @access_token = OAuth::AccessToken.new(@consumer, session[:oauth][:access_token], session[:oauth][:access_token_secret])
+  end
+  
+  if @access_token
+    @client = Grackle::Client.new(:auth => {
+      :type => :oauth,
+      :consumer_key => consumer_key,
+      :consumer_secret => consumer_secret,
+      :token => @access_token.token,
+      :token_secret => @access_token.secret
+    })
+
+    @user = @client.account.verify_credentials? if !@user
+  end
+
+  # wildcard domain
   subdomain = request.host.split('.').first
   unless %w(localhost makesthis-com makesthis).include?(subdomain)
     params[:twitter_name] = subdomain
   end
 
+  # locale
   session[:locale] = params[:locale] if params[:locale]
+#  DataMapper::Validations::I18n.localize!(r18n.locale.code)
 end
 
 get '/' do
@@ -88,18 +119,18 @@ end
 
 get '/profile/edit' do
   login_required
-  @profile = Profile.first_or_new(:twitter => user.info['screen_name'])
+  @profile = Profile.first_or_new(:twitter => @user.screen_name)
   haml :'profile/edit'
 end
 
 post '/profile' do
   login_required
-  @profile = Profile.first_or_new(:twitter => user.info['screen_name'])
+  @profile = Profile.first_or_new(:twitter => @user.screen_name)
   @profile.attributes = params['profile']
-  @profile.icon_url = user.info['profile_image_url']
-  @profile.homepage_url = user.info['url']
+  @profile.icon_url = @user.profile_image_url
+  @profile.homepage_url = @user.url
   if @profile.save
-    redirect "http://#{twitter2domain(user.info['screen_name'])}.#{domain}/"
+    redirect "http://#{twitter2domain(@user.screen_name)}.#{domain}/"
   else
     haml :'profile/edit'
   end
@@ -124,13 +155,36 @@ get '/profiles/:twitter.js' do |twitter|
   profile.to_json
 end
 
+get '/request' do
+  @request_token = @consumer.get_request_token(:oauth_callback => "#{root_url}auth")
+  session[:oauth][:request_token] = @request_token.token
+  session[:oauth][:request_token_secret] = @request_token.secret
+  redirect @request_token.authorize_url
+end
+
+get '/auth' do
+  @access_token = @request_token.get_access_token :oauth_verifier => params[:oauth_verifier]
+  session[:oauth][:access_token] = @access_token.token
+  session[:oauth][:access_token_secret] = @access_token.secret
+  redirect '/profile/edit'
+end
+
+get '/logout' do
+  session[:oauth] = {}
+  redirect '/'
+end
+
 not_found do
   haml :'404'
 end
 
 helpers do
   def logged_in?
-    !user.nil? and user.client.authorized?
+    !!@access_token
+  end
+
+  def login_required
+    redirect '/request' unless logged_in?
   end
 
   def twitter2domain(str)

@@ -22,8 +22,9 @@
     %ul
       %li.twitter
         %a{:href => "http://twitter.com/#{@profile.twitter}"}
-      %li.website
-        %a{:href => @profile.homepage_url}
+      - unless @profile.homepage_url.blank?
+        %li.website
+          %a{:href => @profile.homepage_url}
       %li.makesthis
         %a{:href => "#{root_url}"} MAKES THIS
 #information_print
