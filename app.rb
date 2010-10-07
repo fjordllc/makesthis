@@ -10,7 +10,7 @@ require 'dm-core'
 require 'dm-migrations'
 require 'dm-timestamps'
 require 'dm-validations'
-#require 'dm-validations-i18n'
+require 'dm-validations-i18n'
 require 'dm-types'
 require 'dm-serializer'
 require 'dm-pager'
@@ -54,6 +54,7 @@ set :sass, :style => :expanded
 set :default_locale, 'ja'
 set :api_per_page, 100
 use Rack::Exceptional, ENV['EXCEPTIONAL_API_KEY'] || 'key' if ENV['RACK_ENV'] == 'production'
+#self.register Padrino::Helpers
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{File.expand_path(File.dirname(__FILE__))}/development.sqlite3")
 
 before do
@@ -64,15 +65,15 @@ before do
   consumer_secret = ENV['TWITTER_OAUTH_SECRET'] || config['twitter_oauth_secret']
 
   @consumer ||= OAuth::Consumer.new(consumer_key, consumer_secret, :site => "http://twitter.com")
-  
+
   if !session[:oauth][:request_token].nil? && !session[:oauth][:request_token_secret].nil?
     @request_token = OAuth::RequestToken.new(@consumer, session[:oauth][:request_token], session[:oauth][:request_token_secret])
   end
-  
+
   if !session[:oauth][:access_token].nil? && !session[:oauth][:access_token_secret].nil?
     @access_token = OAuth::AccessToken.new(@consumer, session[:oauth][:access_token], session[:oauth][:access_token_secret])
   end
-  
+
   if @access_token
     @client = Grackle::Client.new(:auth => {
       :type => :oauth,
@@ -93,7 +94,7 @@ before do
 
   # locale
   session[:locale] = params[:locale] if params[:locale]
-#  DataMapper::Validations::I18n.localize!(r18n.locale.code)
+  DataMapper::Validations::I18n.localize! r18n.locale.code
 end
 
 get '/' do
