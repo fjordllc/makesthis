@@ -239,17 +239,17 @@ p.about a:active {
 	}
 #questions .question {
 	margin-bottom: 50px;
+	line-height: 1.7em;
+	font-size: 116.7%;
 }
 #questions .question p {
 	margin-bottom: 2em;
 	line-height: 1.7em;
-	font-size: 116.7%;
 	}
 #questions .question ul,
 #questions .question ol {
 	margin-bottom: 2em;
 	line-height: 1.3em;
-	font-size: 116.7%;
 	list-style-position: outside;
 	padding-left: 1em;
 }
