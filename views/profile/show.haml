@@ -27,8 +27,10 @@
           %a{:href => @profile.homepage_url}
       %li.makesthis
         %a{:href => "#{root_url}"} MAKES THIS
-      %li
-        %a{:href => "JavaScript:window.print();"} このページを印刷する
+      %li.print
+        %a{:href => "JavaScript:window.print();"} ネームカードを作る
+      %li.print_description
+        %a{:href => "/about#namecard"} ?
 #information_print
   .icon
     %h4

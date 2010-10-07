@@ -245,6 +245,50 @@ p.about a:active {
 	line-height: 1.7em;
 	font-size: 116.7%;
 	}
+#questions .question ul,
+#questions .question ol {
+	margin-bottom: 2em;
+	line-height: 1.3em;
+	font-size: 116.7%;
+	list-style-position: outside;
+	padding-left: 1em;
+}
+#questions .question ul li {
+	margin-bottom: 0.6em;
+	line-height: 1.3em;
+	background:url("/images/li.gif") no-repeat scroll left 4px transparent;
+	list-style-type:none;
+	padding-left: 1.2em;
+}
+#questions .question ol li {
+	margin-bottom: 0.6em;
+	line-height: 1.3em;
+	background:none;
+	list-style-type:decimal;
+	padding-left: 0em;
+	margin-left: 1.4em;
+}
+#questions .question li:last-child {
+	margin-bottom: 0em;
+	}
+#questions .question strong,
+#questions .question b {
+	font-weight: bold;
+	}
+#questions .question blockquote {
+	display: block;
+	background-color: #EDEDED;
+	margin-bottom: 2em;
+	padding-top: 3.5em;
+	padding-right: 1.8em;
+	padding-bottom: 0em;
+	padding-left: 1.8em;
+	margin-right: 1em;
+	margin-left: 1em;
+	background-image: url(images/blockquote.gif);
+	background-repeat: no-repeat;
+	background-position: 1em 1em;
+	}
 #questions .footer {
 	border-top-width: 1px;
 	border-top-style: dotted;
@@ -622,7 +666,7 @@ select:focus {
 
 
 #information_print {
-	direction:none !important;}
+	display:none !important;}
 
 
 #namecard img {

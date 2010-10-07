@@ -8,7 +8,8 @@
     %meta{:name => 'description', :content => '作ってる人向けプロフィールサービス'}
     %meta{:name => 'keywords', :content => 'MAKE,プロフィール,イベント,自己紹介'}
     %title MAKES THIS
-    %link{:href => '/style.css', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/style.css', :rel => 'stylesheet', :type => 'text/css', :media=>'screen'}
+    %link{:href => '/print.css', :rel => 'stylesheet', :type => 'text/css', :media=>'print'}
     %link{:rel => 'shortcut icon', :href => '/favicon.ico'}
   %body
     = yield
