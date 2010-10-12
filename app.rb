@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'sinatra'
 require 'sinatra/r18n'
 require 'padrino-helpers'
@@ -95,6 +97,9 @@ before do
   # locale
   session[:locale] = params[:locale] if params[:locale]
   DataMapper::Validations::I18n.localize! r18n.locale.code
+
+  lang = YAML.load(open("i18n/#{r18n.locale.code}.yml"))
+  DataMapper::Validations::I18n.translate_field_name_with(r18n.locale.code => lang['profile'])
 end
 
 get '/' do
