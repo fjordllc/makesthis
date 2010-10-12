@@ -213,6 +213,13 @@ p.about a:active {
 	display: block;
 	margin-bottom: 25px;
 	}
+#person .portrait img {
+	max-width:640px;
+	text-align: center;
+	display: block;
+	margin-bottom: 25px;
+    width:expression(document.body.clientWidth < 2? "0px" : document.body.clientWidth > 642? "640px" : "auto");
+	}
 #person .name {
 	text-align: right;
 	display: block;
