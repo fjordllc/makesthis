@@ -219,6 +219,8 @@ p.about a:active {
 	display: block;
 	margin-bottom: 25px;
     width:expression(document.body.clientWidth < 2? "0px" : document.body.clientWidth > 642? "640px" : "auto");
+	margin-right: auto;
+	margin-left: auto;
 	}
 #person .name {
 	text-align: right;
