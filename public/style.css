@@ -244,7 +244,7 @@ p.about a:active {
 	background-image: url(/images/questions_title.gif);
 	background-repeat: no-repeat;
 	background-position: left bottom;
-	padding-bottom: 4px;
+	padding-bottom: 8px;
 	}
 #questions .question {
 	margin-bottom: 50px;
