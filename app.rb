@@ -62,9 +62,14 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{File.expand_path(
 before do
   session[:oauth] ||= {}
 
-  config = YAML.load(open('config.yml'))
-  consumer_key = ENV['TWITTER_OAUTH_KEY'] || config['twitter_oauth_key']
-  consumer_secret = ENV['TWITTER_OAUTH_SECRET'] || config['twitter_oauth_secret']
+  if ENV['RACK_ENV'] == 'production'
+    consumer_key = ENV['TWITTER_OAUTH_KEY']
+    consumer_secret = ENV['TWITTER_OAUTH_SECRET']
+  else
+    config = YAML.load(open('config.yml'))
+    consumer_key = config['twitter_oauth_key']
+    consumer_secret = config['twitter_oauth_secret']
+  end
 
   @consumer ||= OAuth::Consumer.new(consumer_key, consumer_secret, :site => "http://twitter.com")
 
