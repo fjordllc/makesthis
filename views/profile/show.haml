@@ -28,7 +28,7 @@
       %li.makesthis
         %a{:href => "#{root_url}"} MAKES THIS
       %li.print
-        %a{:href => "JavaScript:window.print();"} ネームカードを作る
+        %a{:href => "javascript:window.print();"} ネームカードを作る
       %li.print_description
         %a{:href => "#{root_url}about#namecard"} ?
 #information_print
@@ -36,7 +36,7 @@
     %h4
       %img{:src => @profile.icon_url}
   .mention== @#{@profile.twitter} 
-  .text= @profile.who_are_you
+  .text= truncate(strip_tags(@profile.who_are_you), :length => 140)
   .qr_code
     %img{:src => "http://chart.apis.google.com/chart?cht=qr&chs=145x145&chl=http%3A%2F%2F#{twitter2domain(@profile.twitter)}.makesthis.com%2F"}
   .makesthis_url== http://#{twitter2domain(@profile.twitter)}.makesthis.com/

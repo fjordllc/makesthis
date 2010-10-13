@@ -113,6 +113,7 @@ get '/' do
   else
     @profile = Profile.first(:twitter => params[:twitter_name])
     if @profile
+      @meta_title = "#{@profile.domain.upcase} MAKES THIS"
       haml :'profile/show'
     else
       404
@@ -208,5 +209,18 @@ helpers do
 
   def domain
     ENV['RACK_ENV'] == 'production' ? 'makesthis.com' : 'localhost:9393'
+  end
+
+  def strip_tags(text)
+      text.gsub(/<.+?>/, '')
+  end
+
+  def truncate(text, options = {})
+    options = {:length => 30, :ommision => '...'}.merge(options)
+    if options[:length] < text.length
+      text[0..options[:length]] + options[:ommision]
+    else
+      text
+    end
   end
 end
