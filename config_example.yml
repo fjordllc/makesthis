@@ -1,0 +1,3 @@
+twitter_oauth_key: 
+twitter_oauth_secret: 
+twitter_oauth_callback_url: http://localhost:9393/auth
