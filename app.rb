@@ -56,7 +56,6 @@ set :sass, :style => :expanded
 set :default_locale, 'ja'
 set :api_per_page, 100
 use Rack::Exceptional, ENV['EXCEPTIONAL_API_KEY'] || 'key' if ENV['RACK_ENV'] == 'production'
-#self.register Padrino::Helpers
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{File.expand_path(File.dirname(__FILE__))}/development.sqlite3")
 
 before do
@@ -142,7 +141,12 @@ post '/profile' do
   @profile.icon_url = @user.profile_image_url
   @profile.homepage_url = @user.url
   if @profile.save
-    redirect "http://#{twitter2domain(@user.screen_name)}.#{domain}/"
+    url = "http://#{twitter2domain(@user.screen_name)}.#{domain}/"
+    if params[:tweet]
+      status = "#{@profile.domain.upcase} MAKES THIS. #{url} #makesthis"
+      @client.statuses.update! :status => status
+    end
+    redirect url 
   else
     haml :'profile/edit'
   end

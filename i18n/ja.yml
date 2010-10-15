@@ -20,6 +20,7 @@ what_about_makesthis_2: <p>勉強会や交流会など、多くの人が集ま�
 logout: ログアウト
 error_in_profile: 入力内容にエラーがあります
 page_not_found: お探しのページは見つかりませんでした
+post_to_twitter: Twitterにつぶやく
 profile:
   photo_url: 写真URL
   name: 名前

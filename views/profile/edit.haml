@@ -3,6 +3,11 @@
     %a{:href => '/'}= t.what_make_you
   %h2.title= t.profile_service_for_maker
   %p= t.description_for_profile
+  .button{:onclick => "$('#how_to_write').toggle()"}= 'toggle'
+  #how_to_write{:style => 'display:none'}
+    %p 書き方
+    %p あああああああ
+    %p あああああああ
 %form{:action => '/profile', :method => 'post', :id => 'profile_form'}
   %h2.title= t.register_or_edit
   - unless @profile.errors.empty?
@@ -40,5 +45,9 @@
   .section
     %label{:for => 'profile_what_do_you_make_next'}= t.profile.what_do_you_make_next
     %textarea{:id => 'profile_what_do_you_make_next', :class => 'textarea', :name => 'profile[what_do_you_make_next]', :rows => 10, :cols => 50}= @profile.what_do_you_make_next
+  .section
+    %label{:for => 'profile_tweet', :id => 'label_profile_tweet'}
+      %input{:type => 'checkbox', :id => 'profile_tweet', :class => 'checkbox', :name => 'tweet', :checked => "1"}
+      = t.post_to_twitter
   %p.button
     %input{:type => 'submit', :value => t.register_or_edit}

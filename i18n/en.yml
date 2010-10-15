@@ -20,6 +20,7 @@ what_about_makesthis_2: <p>At events where a lot of people get together, such as
 logout: Logout
 error_in_profile: Error
 page_not_found: Page is not found
+post_to_twitter: Post to Twitter
 profile:
   photo_url: Photo URL
   name: Name
