@@ -3,51 +3,95 @@
     %a{:href => '/'}= t.what_make_you
   %h2.title= t.profile_service_for_maker
   %p= t.description_for_profile
-  .button{:onclick => "$('#how_to_write').toggle()"}= 'toggle'
-  #how_to_write{:style => 'display:none'}
-    %p 書き方
-    %p あああああああ
-    %p あああああああ
-%form{:action => '/profile', :method => 'post', :id => 'profile_form'}
-  %h2.title= t.register_or_edit
-  - unless @profile.errors.empty?
-    #errorExplanation.errorExplanation
-      %h2= t.error_in_profile
-      %ul
-        - @profile.errors.each do |error|
-          %li= error
-  .section
-    %label{:for => 'profile_photo_url'}= t.profile.photo_url
-    %input{:type => 'text', :class => 'text', :id => 'profile_photo_url', :name => 'profile[photo_url]', :value => @profile.photo_url}
-    .description
-      %h3 写真の登録方法
-      %p ブラウザから使いたい写真を選択。その写真の上で右クリック。
-      %ul
-        %li Internet Exproler : プロパティ→アドレス（URL）の右にあるURLをコピー
-        %li Safari : イメージのアドレスをコピーを選択
-        %li Firefox・Goole Chrome : 画像のURLをコピーを選択
-      %p 写真（URL）のボックスにペースト。
-  .section
-    %label{:for => 'profile_name'}= t.profile.name
-    %input{:type => 'text', :class => 'text', :id => 'profile_name', :name => 'profile[name]', :value => @profile.name}
-  .section
-    %label{:for => 'profile_description'}= t.profile.description
-    %input{:type => 'text', :class => 'text', :id => 'profile_description', :name => 'profile[description]', :value => @profile.description}
-  .section
-    %label{:for => 'profile_who_are_you'}= t.profile.who_are_you
-    %textarea{:id => 'profile_who_are_you', :class => 'textarea', :name => 'profile[who_are_you]', :rows => 10, :cols => 50}= @profile.who_are_you
-  .section
-    %label{:for => 'profile_what_did_you_make'}= t.profile.what_did_you_make
-    %textarea{:id => 'profile_what_did_you_make', :class => 'textarea', :name => 'profile[what_did_you_make]', :rows => 10, :cols => 50}= @profile.what_did_you_make
-  .section
-    %label{:for => 'profile_why_did_you_make'}= t.profile.why_did_you_make
-    %textarea{:id => 'profile_why_did_you_make', :class => 'textarea', :name => 'profile[why_did_you_make]', :rows => 10, :cols => 50}= @profile.why_did_you_make
-  .section
-    %label{:for => 'profile_what_do_you_make_next'}= t.profile.what_do_you_make_next
-    %textarea{:id => 'profile_what_do_you_make_next', :class => 'textarea', :name => 'profile[what_do_you_make_next]', :rows => 10, :cols => 50}= @profile.what_do_you_make_next
-  .section
-    %label{:for => 'profile_tweet', :id => 'label_profile_tweet'}
-      %input{:type => 'checkbox', :id => 'profile_tweet', :class => 'checkbox', :name => 'tweet', :checked => "1"}
-      = t.post_to_twitter
-  %p.button
-    %input{:type => 'submit', :value => t.register_or_edit}
+  %form{:action => '/profile', :method => 'post', :id => 'profile_form'}
+    %h2.title= t.register_or_edit
+    - unless @profile.errors.empty?
+      #errorExplanation.errorExplanation
+        %h2= t.error_in_profile
+        %ul
+          - @profile.errors.each do |error|
+            %li= error
+    .section
+      %label{:for => 'profile_photo_url'}= t.profile.photo_url
+      %input{:type => 'text', :class => 'text', :id => 'profile_photo_url', :name => 'profile[photo_url]', :value => @profile.photo_url}
+      .description
+        %h3 写真の登録方法
+        %p ブラウザから使いたい写真を選択。その写真の上で右クリック。
+        %ul
+          %li Internet Exproler : プロパティ→アドレス（URL）の右にあるURLをコピー
+          %li Safari : イメージのアドレスをコピーを選択
+          %li Firefox・Goole Chrome : 画像のURLをコピーを選択
+        %p 写真（URL）のボックスにペースト。
+    .toggle_button#question_1{:onclick => "$('#how_to_write').toggle()"}= '文章の入力方法<span>？</span>'
+    #how_to_write{:style => 'display:none'}
+
+      %h3 段落
+      %p.clearfix
+        %img{ :src => '/images/description_p.gif', :class => 'capture', :width => '310', :height => '128', :alt => 'p'}      
+        あらかじめ入力した文章内の段落を作りたい行にカーソルを置いた状態で「H1」ボタンをクリックし、開いたタブ内にある「Paragraph」を選択。その行が段落として表示されます。
+
+      %h3 見出し
+      %p.clearfix
+        %img{ :src => '/images/description_h.gif', :class => 'capture', :width => '310', :height => '128', :alt => 'h'}      
+        あらかじめ入力した文章内の見出しにしたい行にカーソルを置いた状態で「H1」ボタンをクリックし、
+        開いたタブ内にある「h3」〜「h6」を選択しますと、
+        その行が見出しとして表示されます。<br />h3 … 大見出し<br />h4 … 中見出し<br />h5 … 小見出し<br />h6 … さらに小さな見出し
+
+      %h3 見出し
+      %p.clearfix
+        文章内の強調したい部分を選択した状態で「B」ボタンをクリック。その部分の文字が太字で表示されます。
+
+
+      %h3 リスト
+      %p.clearfix
+        何も選択していない状態で、<img src="/images/description_ul.gif" width="18" height="18" alt="ul" class="icon" />か
+        <img src="/images/description_ol.gif" width="18" height="18" alt="ol" class="icon" />をクリックするとリストが作れます。
+        文章を入力後に「enter（改行）」キーを押すとリスト項目が増え、
+        空白の状態で二回連続「enter」キーを押しますと、リストではない文章の入力に戻ることができます。<br />
+        <img src="/images/description_ul.gif" width="18" height="18" alt="ul" class="icon" /> … 番号無しリスト<br />
+        <img src="/images/description_ol.gif" width="18" height="18" alt="ul" class="icon" /> … 番号付きリスト
+
+
+      %h3 画像を挿入
+      %p.clearfix
+        <img src="images/description_img.gif" width="18" height="18" alt="img" class="icon" />をクリックすると
+        画像を挿入することができます。<img src="/images/description_img.gif" width="18" height="18" alt="img" class="icon" />を押した後に表示されたボックスに上記の写真の登録と同じ要領で、画像のURLを入力してください。<br />
+        画像を挿入する場合、挿入した画像を段落で囲いますと、見た目が整います。
+
+
+      %h3 リンク
+      %p.clearfix
+        リンクにしたい部分を選択した状態で、<img src="images/description_a.gif" width="18" height="18" alt="a" class="icon" />をクリックするとその文字にリンクを挿入することができます。<br />
+        <img src="/images/description_a.gif" width="18" height="18" alt="a" class="icon" />を押した後に表示されたボックスにリンク先のURLを入力してください。
+
+
+      %h3 入力内容をHTMLタグで確認する
+      %p.clearfix
+        <img src="/images/description_html.gif" width="18" height="18" alt="a" class="icon" />をクリックすると入力した内容をHTMLソースで確認することが出来ます。
+
+      <a class="toggle_button" onclick="$('#how_to_write').toggle()" href="#question_1"><span>×</span>閉じる</a>
+
+    .section
+      %label{:for => 'profile_name'}= t.profile.name
+      %input{:type => 'text', :class => 'text', :id => 'profile_name', :name => 'profile[name]', :value => @profile.name}
+    .section
+      %label{:for => 'profile_description'}= t.profile.description
+      %input{:type => 'text', :class => 'text', :id => 'profile_description', :name => 'profile[description]', :value => @profile.description}
+    .section
+      %label{:for => 'profile_who_are_you'}= t.profile.who_are_you
+      %textarea{:id => 'profile_who_are_you', :class => 'textarea', :name => 'profile[who_are_you]', :rows => 10, :cols => 50}= @profile.who_are_you
+    .section
+      %label{:for => 'profile_what_did_you_make'}= t.profile.what_did_you_make
+      %textarea{:id => 'profile_what_did_you_make', :class => 'textarea', :name => 'profile[what_did_you_make]', :rows => 10, :cols => 50}= @profile.what_did_you_make
+    .section
+      %label{:for => 'profile_why_did_you_make'}= t.profile.why_did_you_make
+      %textarea{:id => 'profile_why_did_you_make', :class => 'textarea', :name => 'profile[why_did_you_make]', :rows => 10, :cols => 50}= @profile.why_did_you_make
+    .section
+      %label{:for => 'profile_what_do_you_make_next'}= t.profile.what_do_you_make_next
+      %textarea{:id => 'profile_what_do_you_make_next', :class => 'textarea', :name => 'profile[what_do_you_make_next]', :rows => 10, :cols => 50}= @profile.what_do_you_make_next
+    %p.button
+      %label{:for => 'profile_tweet', :id => 'label_profile_tweet'}
+        %input{:type => 'checkbox', :id => 'profile_tweet', :class => 'checkbox', :name => 'tweet', :checked => "1"}
+        = t.post_to_twitter
+    
+      %input{:type => 'submit', :value => t.register_or_edit}

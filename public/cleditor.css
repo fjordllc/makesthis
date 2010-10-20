@@ -1,0 +1,117 @@
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html	
+version: 2.8.1
+*/
+html{color:#727272;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}a{overflow:hidden}
+
+
+a:link,
+a:visited {
+	color:#03F
+	}
+
+a:hover.
+a:active {
+	color:#F36
+}
+
+h3 {
+	font-size: 150%;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	color: #20608d;
+	font-weight: bold;
+}
+h4 {
+	font-size: 133.4%;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	color: #20608d;
+	font-weight: bold;
+}
+h5 {
+	font-size: 116.7%;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	font-weight: bold;
+	color: #4e8db9;
+	}
+h6 {
+	font-size: 108.4%;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	font-weight: bold;
+	color: #4e8db9;
+}
+p {
+	margin-bottom: 2em;
+	line-height: 1.7em;
+	}
+img {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	max-width:400px;
+    width:expression(document.body.clientWidth < 2? "0px" : document.body.clientWidth > 402? "400px" : "auto");
+}
+b,
+strong {
+	font-weight: bold;
+}
+
+a:link img,
+a:visited img {
+	border: 3px solid #e9e9e9;
+}
+
+a:hover img,
+a:active img {
+	border: 3px solid #CCC;
+}
+
+
+ul,
+ol {
+	margin-bottom: 2em;
+	line-height: 1.3em;
+	list-style-position: outside;
+	padding-left: 1em;
+}
+ul li {
+	margin-bottom: 0.6em;
+	line-height: 1.3em;
+	background:url("/images/li.gif") no-repeat scroll left 4px transparent;
+	list-style-type:none;
+	padding-left: 1.2em;
+}
+ol li {
+	margin-bottom: 0.6em;
+	line-height: 1.3em;
+	background:none;
+	list-style-type:decimal;
+	padding-left: 0em;
+	margin-left: 1.4em;
+}
+li:last-child {
+	margin-bottom: 0em;
+	}
+strong,
+b {
+	font-weight: bold;
+	}
+blockquote {
+	display: block;
+	background-color: #EDEDED;
+	margin-bottom: 2em;
+	padding-top: 3.5em;
+	padding-right: 1.8em;
+	padding-bottom: 0em;
+	padding-left: 1.8em;
+	margin-right: 1em;
+	margin-left: 1em;
+	background-image: url(images/blockquote.gif);
+	background-repeat: no-repeat;
+	background-position: 1em 1em;
+	}

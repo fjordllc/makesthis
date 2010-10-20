@@ -214,10 +214,10 @@ p.about a:active {
 	margin-bottom: 25px;
 	}
 #person .portrait img {
-	max-width:640px;
 	text-align: center;
 	display: block;
 	margin-bottom: 25px;
+	max-width:640px;
     width:expression(document.body.clientWidth < 2? "0px" : document.body.clientWidth > 642? "640px" : "auto");
 	margin-right: auto;
 	margin-left: auto;
@@ -251,10 +251,62 @@ p.about a:active {
 	line-height: 1.7em;
 	font-size: 116.7%;
 }
+#questions .question h3,
+iframe h3 {
+	font-size: 150%;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	color: #20608d;
+	font-weight: bold;
+}
+#questions .question h4 {
+	font-size: 133.4%;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	color: #20608d;
+	font-weight: bold;
+}
+#questions .question h5 {
+	font-size: 116.7%;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	font-weight: bold;
+	color: #4e8db9;
+	}
+#questions .question h6 {
+	font-size: 108.4%;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	font-weight: bold;
+	color: #4e8db9;
+}
 #questions .question p {
 	margin-bottom: 2em;
 	line-height: 1.7em;
 	}
+#questions .question img {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	max-width:400px;
+    width:expression(document.body.clientWidth < 2? "0px" : document.body.clientWidth > 402? "400px" : "auto");
+}
+#questions .question b,
+#questions .question strong {
+	font-weight: bold;
+}
+
+#questions .question a:link img,
+#questions .question a:visited img {
+	border: 3px solid #e9e9e9;
+}
+
+#questions .question a:hover img,
+#questions .question a:active img {
+	border: 3px solid #CCC;
+}
+
+
 #questions .question ul,
 #questions .question ol {
 	margin-bottom: 2em;
@@ -563,6 +615,11 @@ p.about a:active {
 	margin-bottom: 10px;
 	font-size: 13px;
 	color: #4e8db9;
+	background-image: none;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
 	}
 #profile_form .description p {
 	margin-bottom: 15px;
@@ -607,6 +664,7 @@ select {
 	border-right: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
 	padding: 3px 2px;
+	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	background-color: #eee;
@@ -683,3 +741,65 @@ select:focus {
 	margin-bottom: 15px;
 	margin-left: 15px;	
 	}
+
+.content .toggle_button {
+	background-color: #598DB9;
+	text-align: center;
+	display: block;
+	margin-right: 480px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	color: #FFF;
+	font-size: 12px;
+	cursor: pointer;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	margin-bottom: 30px;
+}
+.content:hover .toggle_button,
+.content:active .toggle_button{
+	background-color: #3d6f9a;
+}
+.content .toggle_button span {
+	color: #CF0;
+	margin-left: 0.5em;
+}
+#how_to_write {
+	margin-bottom: 30px;
+	background-color: #e6e6e6;
+	margin-top: -15px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding-top: 25px;
+	padding-right: 25px;
+	padding-bottom: 0px;
+	padding-left: 25px;
+}
+#how_to_write p img.capture {
+	float: right;
+	margin-bottom: 8px;
+	margin-left: 8px;
+}
+#how_to_write p img.icon {
+	margin-right: 3px;
+	margin-left: 3px;
+	vertical-align: top;
+}
+#how_to_write .toggle_button {
+	margin-right: 500px;
+	text-decoration: none;
+}
+#how_to_write .toggle_button span {
+	color: #CF0;
+	margin-right: 0.5em;
+	margin-left: 0px;
+}
+#profile_form label#label_profile_tweet {
+	margin-bottom: 10px;
+	font-size: 13px;
+	margin-top: -15px;
+}#profile_form label#label_profile_tweet input {
+	margin-right: 0.5em;
+}

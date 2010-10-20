@@ -1,94 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>無題ドキュメント</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="text/css" http-equiv="Content-Style-Type" />
+    <meta content="text/javascript" http-equiv="Content-Script-Type" />
+    <meta content="作ってる人向けプロフィールサービス" name="description" />
+    <meta content="MAKE,プロフィール,イベント,自己紹介" name="keywords" />
+    <title>MAKES THIS</title>
 
+    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="print.css" media="print" rel="stylesheet" type="text/css" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <link href="jquery.cleditor.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.cleditor.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+        $(function() {
+          $(".textarea").cleditor({
+            width: 640,
+            height: 400,
+            controls: "bold style bullets numbering image link source",
+            styles: [["Paragraph", "<p>"], ["Header 3", "<h3>"],  ["Header 4","<h4>"],  ["Header 5","<h5>"], ["Header 6","<h6>"]]
+          })
+        })
+      //]]>
+    </script>
+
+  </head>
   <body>
     <div class="content">
       <h1>
         <a href="/">何作ってる人？</a>
       </h1>
-
       <h2 class="title">作る人のプロフィールサービス</h2>
-      <p>インタビューに答える要領で答えてみてください。英語版・日本語版があるので名前や肩書きは英語で書き、質問には英語・日本語を併記すると便利です。写真は幅500ピクセル以上の大きなものを指定するとぴったりフィットします。</p>
-    </div>
+      <p>インタビューに答える要領で答えてみてください。英語版・日本語版があるので名前や肩書きは英語で書き、質問には英語・日本語を併記すると便利です。写真は幅640ピクセル以上の大きなものを指定するとぴったりフィットします。</p>
+
+
     <form action="/profile" id="profile_form" method="post">
       <h2 class="title">登録・更新</h2>
       <div class="section">
         <label for="profile_photo_url">写真URL</label>
-        <input class="text" id="profile_photo_url" name="profile[photo_url]" type="text" value="http://farm5.static.flickr.com/4146/4997815345_e35b29e2eb_z.jpg" />
+        <input class="text" id="profile_photo_url" name="profile[photo_url]" type="text" value="http://www.netzkobe.co.jp/wp-content/uploads/2010/07/pres_banner.png" />
+        <div class="description">
+          <h3>写真の登録方法</h3>
 
-<div class="description">
-<h3>写真の登録方法</h3>
+          <p>ブラウザから使いたい写真を選択。その写真の上で右クリック。</p>
+          <ul>
+            <li>Internet Exproler : プロパティ→アドレス（URL）の右にあるURLをコピー</li>
+            <li>Safari : イメージのアドレスをコピーを選択</li>
+            <li>Firefox・Goole Chrome : 画像のURLをコピーを選択</li>
+          </ul>
+          <p>写真（URL）のボックスにペースト。</p>
 
-<p>ブラウザから使いたい写真を選択。その写真の上で右クリック。</p>
-<ul>
-<li>Internet Exproler : プロパティ→アドレス（URL）の右にあるURLをコピー</li>
-<li>Safari : イメージのアドレスをコピーを選択</li>
-<li>Firefox・Goole Chrome : 画像のURLをコピーを選択</li>
-</ul>
-<p>写真（URL）のボックスにペースト。</p>
-</div>
-
+        </div>
       </div>
       <div class="section">
         <label for="profile_name">名前</label>
-        <input class="text" id="profile_name" name="profile[name]" type="text" value="Teppei Machida" />
+        <input class="text" id="profile_name" name="profile[name]" type="text" value="test" />
       </div>
       <div class="section">
         <label for="profile_description">所属・肩書き・職業</label>
 
-        <input class="text" id="profile_description" name="profile[description]" type="text" value="Designer of FJORD,LLC" />
+        <input class="text" id="profile_description" name="profile[description]" type="text" value="test" />
       </div>
+
+      <div class="button" onclick="$('#how_to_write').toggle()" id="question_1">文章の入力方法<span>？</span></div>
+      <div id="how_to_write" style="display:none">
+
+        <h3>段落</h3>
+        <p class="clearfix"><img src="images/description_p.gif" width="310" height="128" alt="p" class="capture" />
+        あらかじめ入力した文章内の段落を作りたい行に
+        カーソルを置いた状態で「H1」ボタンをクリックし、
+        開いたタブ内にある「Paragraph」を選択。その行が段落として表示されます。</p>
+
+        <h3>見出し</h3>
+        <p class="clearfix"><img src="images/description_h.gif" width="310" height="128" alt="h" class="capture" />
+        あらかじめ入力した文章内の見出しにしたい行にカーソルを置いた状態で「H1」ボタンをクリックし、
+        開いたタブ内にある「h3」〜「h6」を選択しますと、
+        その行が見出しとして表示されます。<br />h3 … 大見出し<br />h4 … 中見出し<br />h5 … 小見出し<br />h6 … さらに小さな見出し</p>
+
+
+        <h3>強調</h3>
+        <p class="clearfix">文章内の強調したい部分を選択した状態で「B」ボタンをクリック。その部分の文字が太字で表示されます。</p>
+
+        <h3>リスト</h3>
+        <p class="clearfix">何も選択していない状態で、<img src="images/description_ul.gif" width="18" height="18" alt="ul" class="icon" />か
+        <img src="images/description_ol.gif" width="18" height="18" alt="ol" class="icon" />をクリックするとリストが作れます。
+        文章を入力後に「enter（改行）」キーを押すとリスト項目が増え、
+        空白の状態で二回連続「enter」キーを押しますと、リストではない文章の入力に戻ることができます。<br />
+        <img src="images/description_ul.gif" width="18" height="18" alt="ul" class="icon" /> … 番号無しリスト<br />
+        <img src="images/description_ol.gif" width="18" height="18" alt="ul" class="icon" /> … 番号付きリスト
+        </p>
+
+        <h3>画像を挿入</h3>
+        <p class="clearfix"><img src="images/description_img.gif" width="18" height="18" alt="img" class="icon" />をクリックすると
+        画像を挿入することができます。<img src="images/description_img.gif" width="18" height="18" alt="a" class="icon" />を押した後に表示されたボックスに上記の写真の登録と同じ要領で、
+        画像のURLを入力してください。<br />
+        画像を挿入する場合、挿入した画像を段落で囲いますと、見た目が整います。</p>
+
+        <h3>リンク</h3>
+        <p class="clearfix">リンクにしたい部分を選択した状態で、<img src="images/description_a.gif" width="18" height="18" alt="a" class="icon" />をクリックすると
+        その文字にリンクを挿入することができます。<br />
+        <img src="images/description_a.gif" width="18" height="18" alt="a" class="icon" />を押した後に表示されたボックスにリンク先のURLを入力してください。</p>
+
+        <h3>HTMLタグを見る</h3>
+        <p class="clearfix"><img src="images/description_html.gif" width="18" height="18" alt="a" class="icon" />をクリックすると
+        入力した内容をHTMLソースで確認することが出来ます。</p>
+      <a class="button" onclick="$('#how_to_write').toggle()" href="#question_1"><span>×</span>閉じる</a>
+
+      </div>
+
       <div class="section">
         <label for="profile_who_are_you">あなたは誰ですか？</label>
-        <textarea cols="50" id="profile_who_are_you" name="profile[who_are_you]" rows="10"><p>町田哲平です。<br />&#x000A;<a href-"http://machida.fjord.jp">FJORD,LLC</a>でwebアプリのデザイン、コーディングをしています。</p></textarea>
+        <textarea class="textarea" cols="50" id="profile_who_are_you" name="profile[who_are_you]" rows="10">test</textarea>
       </div>
       <div class="section">
         <label for="profile_what_did_you_make">何を作りましたか？</label>
 
-        <textarea cols="50" id="profile_what_did_you_make" name="profile[what_did_you_make]" rows="10"><p>ものを作っている人のためのプロフィール公開サービス、MAKES THIS というサービスを作りました。<br />&#x000A;<a href="http://makesthis.com/">http://makesthis.com/</a></p></textarea>
+        <textarea class="textarea" cols="50" id="profile_what_did_you_make" name="profile[what_did_you_make]" rows="10">test</textarea>
       </div>
       <div class="section">
         <label for="profile_why_did_you_make">何故作りましたか？</label>
-        <textarea cols="50" id="profile_why_did_you_make" name="profile[why_did_you_make]" rows="10"><p>私自身デザイナーとしてwebアプリの開発などもの作りをしているので、自分と関わった人が、ものを作る職種に就いていたり、ものを作る活動をしている人だったら、その人の経歴や就職している企業名や肩書きよりも、具体的に「何を作ってる人」なのかを知りたいです。</p>&#x000A;&#x000A;<p>とはいえ、初対面の方に「何作ってる人？」と聞くのはなかなか難しいものがあります。</p>&#x000A;&#x000A;<p>一番知りたい情報、「何を作ってる人？」をシンプルに知ることが出来るサービスがあったら便利なのではないかと思い、「MAKES THIS」を作りました。</p>&#x000A;&#x000A;<p>例えば勉強会や交流会など、多くの人が集まるイベントでは、そこに集まった全員と話すことはなかなか困難です。そのイベントで以前から自分が気に入ってたもの、興味を持っていたもの、自分と似た感性を感じるものを作っている人がそこにいて、もしそのとき、その人と話せば有意義な情報交換が得られたということがあったかもしれません。イベント参加者が「MAKES THIS」を使うことによって、何を作っている人か知らなかった為に、その人と接触する機会を逃していた、ということがもうなくなるかもしれません。</p>&#x000A;&#x000A;<p>これから関わる人があらかじめ「MAKES THIS」を見ておくことによって、自己紹介の時間も削減でき、その分もっと進んだ地点から会話をスタートすることが出来ます。<br />また、あらかじめ作ったものを知ることによって、聞きいてみたいこと、話し合ってみたい話題を用意する時間も生まれます。</p>&#x000A;&#x000A;<p>というわけで、色々と役に立つ可能性があるサービスです。もし、あなたがものを作っている人だったら「MAKES THIS」に是非登録をしてみてください。</p>&#x000A;&#x000A;<p><a href="http://makesthis.com/profile/edit">登録はこちらのページから</a> ※要twitterアカウント</p></textarea>
+        <textarea class="textarea" cols="50" id="profile_why_did_you_make" name="profile[why_did_you_make]" rows="10">test</textarea>
       </div>
       <div class="section">
 
         <label for="profile_what_do_you_make_next">次に何を作りますか？</label>
-        <textarea cols="50" id="profile_what_do_you_make_next" name="profile[what_do_you_make_next]" rows="10"><p>とりあえずは「MAKES THIS」の機能追加をもう少し。<br />&#x000A;それぞれのユーザーが任意のユーザーリストを作れる機能を入れたいです。</p></textarea>
+        <textarea class="textarea" cols="50" id="profile_what_do_you_make_next" name="profile[what_do_you_make_next]" rows="10"><p>私自身デザイナーとしてwebアプリの開発などもの作りをしているので、自分と関わった人が、ものを作る職種に就いていたり、ものを作る活動をしている人だったら、その人の経歴や就職している企業名や肩書きよりも、具体的に「何を作ってる人」なのかを知りたいです。</p>&#x000A;        &#x000A; &#x000A; <ul>&#x000A; <li>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</li>&#x000A; <li>あああああああああああああああああああああああああああ</li>&#x000A; <li>あああああああああああああああああああああああああ</li>&#x000A; </ul>&#x000A;&#x000A;&#x000A; <ol>&#x000A; <li>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</li>&#x000A; <li>あああああああああああああああああああああああああああ</li>&#x000A; <li>あああああああああああああああああああああああああ</li>&#x000A; </ol>&#x000A;&#x000A; &#x000A; &#x000A;        <p>とはいえ、初対面の方に「何作ってる人？」と聞くのはなかなか難しいものがあります。</p>&#x000A;        &#x000A;        <p>一番知りたい情報、「何を作ってる人？」をシンプルに知ることが出来るサービスがあったら便利なのではないかと思い、「MAKES THIS」を作りました。</p>&#x000A;        &#x000A;        <p>例えば勉強会や交流会など、多くの人が集まるイベントでは、そこに集まった全員と話すことはなかなか困難です。そのイベントで以前から自分が気に入ってたもの、興味を持っていたもの、自分と似た感性を感じるものを作っている人がそこにいて、もしそのとき、その人と話せば有意義な情報交換が得られたということがあったかもしれません。イベント参加者が「MAKES THIS」を使うことによって、何を作っている人か知らなかった為に、その人と接触する機会を逃していた、ということがもうなくなるかもしれません。</p>&#x000A;        &#x000A;        <p>これから関わる人があらかじめ「MAKES THIS」を見ておくことによって、自己紹介の時間も削減でき、その分もっと進んだ地点から会話をスタートすることが出来ます。<br />また、作ったものを知っておくことによって、質問、話題を用意する時間も生まれます。</p>&#x000A;&#x000A;        &#x000A;        <p>というわけで、色々と役に立つ可能性があるサービスです。もし、あなたがものを作っている人だったら「MAKES THIS」に是非登録をしてみてください。</p>&#x000A;        &#x000A;        <p><a href="http://makesthis.com/profile/edit">登録はこちらのページから</a> ※要twitterアカウント</p></textarea>
       </div>
       <p class="button">
+        <label for="profile_tweet" id="label_profile_tweet">
+          <input checked="1" class="checkbox" id="profile_tweet" name="tweet" type="checkbox" />
+          Twitterにつぶやく
+        </label>
+
         <input type="submit" value="登録・更新" />
       </p>
     </form>
+      </div>
     <div id="footer">
-
       <ul class="nav">
         <li>
-          <a href="http://makesthis.com/profile/edit">登録・更新</a>
+          <a href="http://localhost:9393/profile/edit">登録・更新</a>
+
         </li>
         <li>
           <a href="http://fjord.jp/love">更新情報</a>
         </li>
         <li>
-
-          <a href="http://makesthis.com/api">API</a>
+          <a href="http://localhost:9393/api">API</a>
         </li>
         <li>
+
           <a href="?locale=en">English</a>
         </li>
         <li>
           <a href="?locale=ja">日本語</a>
+        </li>
+        <li>
+          <a href="http://localhost:9393/logout">ログアウト</a>
 
         </li>
       </ul>
       <address>
         &copy; 2010
-        <a href="http://makesthis.com/">MAKES THIS</a>
+        <a href="http://localhost:9393/">MAKES THIS</a>
         Created by
         <a href="http://fjord.jp/">FJORD, LLC</a>
       </address>

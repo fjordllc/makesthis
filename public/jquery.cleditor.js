@@ -1,4 +1,4 @@
-﻿/**
+/**
  @preserve CLEditor WYSIWYG HTML Editor v1.3.0
  http://premiumsoftware.net/cleditor
  requires jQuery v1.4.2 or later
@@ -43,8 +43,12 @@
       sizes:        // sizes in the font size popup
                     "1,2,3,4,5,6,7",
       styles:       // styles in the style popup
-                    [["Paragraph", "<p>"], ["Header 1", "<h1>"], ["Header 2", "<h2>"],
-                    ["Header 3", "<h3>"],  ["Header 4","<h4>"],  ["Header 5","<h5>"],
+                    [["Paragraph", "<p>"], 
+                    // ["Header 1", "<h1>"],
+                    // ["Header 2", "<h2>"],
+                    ["Header 3", "<h3>"], 
+                    ["Header 4","<h4>"], 
+                    ["Header 5","<h5>"],
                     ["Header 6","<h6>"]],
       useCSS:       false, // use CSS to style HTML when possible (not supported in ie)
       docType:      // Document type contained within the editor
