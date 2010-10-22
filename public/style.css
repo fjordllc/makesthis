@@ -64,8 +64,8 @@ body{
 	text-align: center;
 }
 h1.logo a {
-	width:424px;
-	height:225px;
+	width:380px;
+	height:260px;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -88,16 +88,17 @@ h1.logo a span {
 h1.logo a span.title {
 	display: block;
 	text-indent: -9999px;
-	height: 50px;
+	height: 40px;
 	}
 h1.logo a span.login {
 	display: block;
-	line-height: 49px;
-	height: 49px;
-	font-size: 153.9%;
-	color: #FFF;
+	line-height: 45px;
+	height: 45px;
+	font-size: 32px;
+	color: #133961;
 	margin-top: 0px;
-	margin-bottom: 100px;
+	margin-bottom: 140px;
+	font-weight: bold;
 	}
 h1.logo a:link span.login,
 h1.logo a:visited span.login {
@@ -109,7 +110,8 @@ h1.logo a:active span.login {
 	text-align: center;
 	margin-right: 70px;
 	margin-left: 70px;
-	background-color: #18394F;
+	color: #133961;
+    text-shadow: -1px -1px 1px #fff;
 }
 h1.logo a span.description {
 	display: block;
@@ -118,6 +120,8 @@ h1.logo a span.description {
 	font-size: 100%;
 	line-height: 24px;
 	height: 24px;
+	margin-right: 25px;
+	margin-left: 25px;
 	}
 h2.description {
 	display: block;
@@ -125,7 +129,7 @@ h2.description {
 	text-align: center;
 	font-size: 52px;
 	font-weight: bold;
-	margin-bottom: 70px;
+	margin-bottom: 50px;
 	}
 h2.error {
 	display: block;
@@ -461,11 +465,11 @@ iframe h3 {
 }
 #questions .footer ul li.makesthis a {
 	background-image: url(/images/footer_make_this.gif);
-	height: 35px;
-	width: 76px;
+	height: 40px;
+	width: 60px;
 	float: right;
 	margin-right: 0px;
-	margin-top: -2px;
+	margin-top: -5px;
 }
 #questions .footer ul li.makesthis a:link,
 #questions .footer ul li.makesthis a:visited {
@@ -513,10 +517,10 @@ iframe h3 {
 .content h1 a {
 	display: block;
 	color: #4e8db9;
-	font-size: 28px;
+	font-size: 30px;
 	font-weight: bold;
-	line-height: 84px;
-	height: 84px;
+	line-height: 130px;
+	height: 130px;
 	padding-left: 220px;
 	text-align: left;
 	}
@@ -802,4 +806,65 @@ select:focus {
 	margin-top: -15px;
 }#profile_form label#label_profile_tweet input {
 	margin-right: 0.5em;
+}
+
+#container {
+	margin-right: -165px;
+	margin-left: -165px;
+	margin-bottom: 40px;
+}
+
+#main {
+	width:655px;
+	float:left;
+}
+#aside {
+	width:290px;
+	float:right;
+}
+#main .content .header {
+	background-image:url(images/content_header.gif);
+	height: 25px;
+}
+#main .content {
+	background-image:url(images/main_content.gif);
+	margin-bottom: 0px;
+}
+#main .content .section {
+	margin-right: 25px;
+	margin-left: 25px;
+	margin-bottom: 15px;
+}
+#main .content .section p {
+	font-size: 14px;
+}
+#main .content .section img {
+	margin-left: 15px;
+	margin-bottom: 15px;
+	float: right;
+}
+#main .content .section h3 {
+	font-size: 24px;
+}
+#main .content .footer {
+	background-image:url(images/content_footer.gif);
+	height: 25px;
+}
+
+
+#twtr-widget-1 h4 {
+	display:none !important;
+}
+.twtr-widget .twtr-tweet {
+　　border-bottom:none !important;
+	margin-bottom: 12px !important;
+}
+.twtr-widget .twtr-tweet-wrap {
+	background-color: #FFF !important;
+	margin-right: 10px !important;
+	margin-left: 10px !important;
+	padding-bottom: 6px !important;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
 }
