@@ -4,56 +4,51 @@
     %span.login= t.register
     %span.description= t.register_by_twitter
 %h2.description= t.what_make_you
-
 #container
   #main
     .content
       .header
-        &nbsp; 
       .section
-        %h3 作ってる人の為のプロフィールサービス
-        %p もしあなたがものを作ってる人ならば、経歴や就職している企業名や肩書きよりも、具体的に「何を作ってる？」を知りたい。きっと多くの人がそう思っているはず。そういう人に向けて情報を発信できるサービスです。
+        %h3= t.the_profile_service_for_people_who_make_things
+        %p= t.what_about_makesthis_1
       .section
-        %h3 こんなときに便利
-        %p 勉強会や交流会など、多くの人が集まるイベントでは、そこに集まった全員と話すことはなかなか困難です。イベント参加者が「MAKES THIS」を使っていれば、前もって話したい人をチェックすることができます。<br />これから関わる人があらかじめ「MAKES THIS」を見ておくことによって、自己紹介の時間も削減でき、その分もっと進んだ地点から会話をスタートすることが出来ます。<br />また、作っているものを知っておくことによって、質問や話題を用意する時間も生まれます。
+        %h3= t.when_is_it_useful
+        %p= t.what_about_makesthis_2
       .section#namecard
-        %h3 ネームカードも作れます
-        %p <img src="images/content_print.jpg" width="150" height="150" alt="name card" />自己紹介ページ下の部分にある「ネームカードを作成」をクリックしますと、自分のMAKES THISのページのQRコードとtwitterアカウントが印刷されたポストカードサイズのネームカードがプリントアウトされます。
+        %h3= t.name_tag_available
+        %p= t.how_to_create_name_tag
       .footer
-        &nbsp; 
-
   #aside
-    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-    <script>
-    new TWTR.Widget({
-    version: 2,
-    type: 'search',
-    search: '#makesthis',
-    interval: 10000,
-    title: '#makesthis',
-    subject: '#makesthis',
-    width: 290,
-    height: 600,
-    theme: {
-    shell: {
-    background: '#dbdbdb',
-    color: '#4E8DB9'
-    },
-    tweets: {
-    background: '#dbdbdb',
-    color: '#444444',
-    links: '#1985b5'
-    }
-    },
-    features: {
-    scrollbar: true,
-    loop: true,
-    live: true,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    toptweets: true,
-    behavior: 'default'
-    }
-    }).render().start();
-    </script>
+    %script{:src => 'http://widgets.twimg.com/j/2/widget.js'}
+    :javascript
+      new TWTR.Widget({
+        version: 2,
+        type: 'search',
+        search: '#makesthis',
+        interval: 10000,
+        title: '#makesthis',
+        subject: '#makesthis',
+        width: 290,
+        height: 600,
+        theme: {
+          shell: {
+            background: '#dbdbdb',
+            color: '#4E8DB9'
+          },
+          tweets: {
+            background: '#dbdbdb',
+            color: '#444444',
+            links: '#1985b5'
+          }
+        },
+        features: {
+          scrollbar: true,
+          loop: true,
+          live: true,
+          hashtags: true,
+          timestamp: true,
+          avatars: true,
+          toptweets: true,
+          behavior: 'default'
+        }
+      }).render().start()
