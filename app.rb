@@ -23,7 +23,7 @@ class Profile
   include DataMapper::Resource
 
   property :id, Serial
-  property :twitter, Slug, :required => true, :unique => true
+  property :twitter, String, :required => true, :unique => true
   property :name, String
   property :description, String
   property :who_are_you, Text
@@ -110,7 +110,7 @@ get '/' do
   if params[:twitter_name].blank?
     haml :index
   else
-    @profile = Profile.first(:twitter => params[:twitter_name])
+    @profile = Profile.first(:twitter => domain2twitter(params[:twitter_name]))
     if @profile
       @meta_title = "#{@profile.domain.upcase} MAKES THIS"
       haml :'profile/show'
@@ -146,7 +146,7 @@ post '/profile' do
       status = "#{@profile.domain.upcase} MAKES THIS. #{url} #makesthis"
       @client.statuses.update! :status => status
     end
-    redirect url 
+    redirect url
   else
     haml :'profile/edit'
   end
@@ -205,6 +205,10 @@ helpers do
 
   def twitter2domain(str)
     str.gsub(/_/, '-')
+  end
+
+  def domain2twitter(str)
+    str.gsub(/-/, '_')
   end
 
   def root_url
