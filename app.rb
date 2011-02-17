@@ -110,7 +110,7 @@ get '/' do
   if params[:twitter_name].blank?
     haml :index
   else
-    @profile = Profile.first(:twitter.like => domain2twitter(params[:twitter_name]))
+    @profile = Profile.first(:conditions => ['LOWER(twitter) = ?', domain2twitter(params[:twitter_name])])
     if @profile
       @meta_title = "#{@profile.domain.upcase} MAKES THIS"
       haml :'profile/show'
@@ -216,7 +216,7 @@ helpers do
   end
 
   def domain
-    ENV['RACK_ENV'] == 'production' ? 'makesthis.com' : 'localhost:9393'
+    ENV['RACK_ENV'] == 'production' ? 'makesthis.com' : 'localhost:4567'
   end
 
   def strip_tags(text)
