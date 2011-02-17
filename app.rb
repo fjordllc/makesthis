@@ -110,7 +110,7 @@ get '/' do
   if params[:twitter_name].blank?
     haml :index
   else
-    @profile = Profile.first(:twitter => domain2twitter(params[:twitter_name]))
+    @profile = Profile.first(:twitter.like => domain2twitter(params[:twitter_name]))
     if @profile
       @meta_title = "#{@profile.domain.upcase} MAKES THIS"
       haml :'profile/show'
