@@ -1,17 +1,16 @@
-= MAKES THIS
+# MAKES THIS
 
 Profile service for Maker.
 
-== INSTALLATION
+## INSTALLATION
 
-  $ gem install bundler
-  $ cp config_example.yml config.yml
-  $ bundle install bundle --without production test
-  $ bundle exec rackup
+    $ cp config_example.yml config.yml
+    $ bundle
+    $ bundle exec ruby app.rb
 
-Access to http://localhost:9292/
+Access to [http://localhost:4567/](http://localhost:4567/)
 
-== Note on Patches/Pull Requests
+## Note on Patches/Pull Requests
 
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -22,7 +21,7 @@ Access to http://localhost:9292/
   bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+## Copyright
 
 MIT LICENSE
 
