@@ -1,0 +1,130 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (4.1.6)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    addressable (2.3.6)
+    data_objects (0.10.14)
+      addressable (~> 2.1)
+    dm-aggregates (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-core (1.0.2)
+      addressable (~> 2.2)
+      extlib (~> 0.9.15)
+    dm-do-adapter (1.0.2)
+      data_objects (~> 0.10.2)
+      dm-core (~> 1.0.2)
+    dm-migrations (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-pager (1.1.0)
+      dm-aggregates (>= 0.10.1)
+      dm-core (>= 0.10.1)
+    dm-postgres-adapter (1.0.2)
+      dm-do-adapter (~> 1.0.2)
+      do_postgres (~> 0.10.2)
+    dm-serializer (1.0.2)
+      dm-core (~> 1.0.2)
+      fastercsv (~> 1.5.3)
+      json_pure (~> 1.4)
+    dm-sqlite-adapter (1.0.2)
+      dm-do-adapter (~> 1.0.2)
+      do_sqlite3 (~> 0.10.2)
+    dm-timestamps (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-types (1.0.2)
+      dm-core (~> 1.0.2)
+      fastercsv (~> 1.5.3)
+      json_pure (~> 1.4)
+      stringex (~> 1.1.0)
+      uuidtools (~> 2.1.1)
+    dm-validations (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-validations-i18n (0.3.3)
+      dm-validations (>= 1.0.2)
+      dm-validations (>= 1.0.2)
+    do_postgres (0.10.14)
+      data_objects (= 0.10.14)
+    do_sqlite3 (0.10.14)
+      data_objects (= 0.10.14)
+    exceptional (2.0.33)
+      rack
+    extlib (0.9.16)
+    fastercsv (1.5.5)
+    grackle (0.3.0)
+      json
+      mime-types
+      oauth
+    haml (4.0.5)
+      tilt
+    i18n (0.6.11)
+    json (1.8.1)
+    json_pure (1.8.1)
+    mime-types (2.4.3)
+    minitest (5.4.2)
+    oauth (0.4.7)
+    padrino-helpers (0.12.4)
+      i18n (~> 0.6, >= 0.6.7)
+      padrino-support (= 0.12.4)
+      tilt (~> 1.4.1)
+    padrino-support (0.12.4)
+      activesupport (>= 3.1)
+    r18n-core (1.1.11)
+    rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rake (10.3.2)
+    sass (3.4.6)
+    shotgun (0.9)
+      rack (>= 1.0)
+    shoulda (3.5.0)
+      shoulda-context (~> 1.0, >= 1.0.1)
+      shoulda-matchers (>= 1.4.1, < 3.0)
+    shoulda-context (1.2.1)
+    shoulda-matchers (2.7.0)
+      activesupport (>= 3.0.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-r18n (1.1.11)
+      r18n-core (= 1.1.11)
+      sinatra (>= 1.3)
+    stringex (1.1.0)
+    thread_safe (0.3.4)
+    tilt (1.4.1)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    uuidtools (2.1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dm-migrations (= 1.0.2)
+  dm-pager
+  dm-postgres-adapter
+  dm-serializer (= 1.0.2)
+  dm-sqlite-adapter
+  dm-timestamps (= 1.0.2)
+  dm-types (= 1.0.2)
+  dm-validations (= 1.0.2)
+  dm-validations-i18n
+  exceptional
+  grackle
+  haml
+  i18n
+  oauth
+  padrino-helpers
+  rack-test
+  rake
+  sass
+  shotgun
+  shoulda
+  sinatra
+  sinatra-r18n
