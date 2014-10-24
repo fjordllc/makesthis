@@ -5,7 +5,7 @@ task :default => :test
 task :test do
 end
 
-desc 'Create the Pyha database'
+desc 'Create database'
 task 'db:migrate' do
   Profile.auto_migrate!
 end

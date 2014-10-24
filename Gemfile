@@ -1,10 +1,11 @@
-source :gemcutter
+source 'https://rubygems.org'
 
-gem 'i18n', '0.4.1'
-gem 'sinatra', '1.0'
-gem 'haml', '3.0.18'
+gem 'i18n'
+gem 'sinatra'
+gem 'haml'
+gem 'sass'
 gem 'rake'
-gem 'sinatra-r18n', '0.4.7.1'
+gem 'sinatra-r18n'
 gem 'oauth'
 gem 'grackle'
 gem 'exceptional'
@@ -30,6 +31,4 @@ group :test do
   gem 'shoulda'
   gem 'rack-test'
   gem 'dm-sqlite-adapter'
-  gem 'autotest'
-  gem 'autotest-growl'
 end
