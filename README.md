@@ -6,9 +6,9 @@ Profile service for Maker.
 
     $ cp config_example.yml config.yml
     $ bundle
-    $ bundle exec ruby app.rb
+    $ bundle exec rackup
 
-Access to [http://localhost:4567/](http://localhost:4567/)
+Access to [http://localhost:9292/](http://localhost:9292/)
 
 ## Note on Patches/Pull Requests
 

@@ -216,7 +216,7 @@ helpers do
   end
 
   def domain
-    ENV['RACK_ENV'] == 'production' ? 'makesthis.com' : 'localhost:4567'
+    ENV['RACK_ENV'] == 'production' ? 'makesthis.com' : 'localhost:9292'
   end
 
   def strip_tags(text)
